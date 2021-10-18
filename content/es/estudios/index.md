@@ -1,0 +1,5 @@
+---
+title: Estudios
+---
+
+Los estudios.

@@ -1,0 +1,24 @@
+{
+  "name": "demo-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/index.js",
+    "tsc": "tsc --watch -p src"
+  },
+  "keywords": [],
+  "author": "Arian Fornaris <developers@phasereditor2d.com> (https://phasereditor2d.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "showdown": "^1.9.1",
+    "yaml": "2.0.0-8"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.1",
+    "@types/showdown": "^1.9.4",
+    "typescript": "^4.4.4"
+  }
+}
