@@ -9,7 +9,7 @@ export class SiteGenerator {
     private _contentRoot: string;
     private _mdConverter: Showdown.Converter;
     private _outputDir: string;
-    private _siteContent?: ISectionContent;
+    private _siteContent?: IPage;
 
     constructor() {
 
@@ -38,7 +38,7 @@ export class SiteGenerator {
             metadata: {},
         };
 
-        this.readSection(this._siteContent);
+        this.readPage(this._siteContent);
 
         console.log(JSON.stringify(this._siteContent, null, 2));
     }
@@ -59,53 +59,53 @@ export class SiteGenerator {
         rmSync(this._outputDir, { recursive: true, force: true });
         mkdirSync(this._outputDir, { recursive: true });
 
-        this.generateSection(this._siteContent);
+        this.generatePage(this._siteContent);
     }
 
-    private generateSection(section: ISectionContent) {
+    private generatePage(page: IPage) {
 
-        const outDir = join("www", section.directory);
+        const outDir = join("www", page.directory);
 
         mkdirSync(outDir, {recursive: true});
 
-        writeFileSync(join(outDir, "index.html"), section.content);
+        writeFileSync(join(outDir, "index.html"), page.content);
 
-        for (const child of section.children) {
+        for (const child of page.children) {
 
-            this.generateSection(child);
+            this.generatePage(child);
         }
     }
 
-    private readSection(section: ISectionContent) {
+    private readPage(page: IPage) {
 
-        const space = "  ".repeat(section.directory.split("/").length);
-        console.log(`${space}Processing ${section.directory}`);
+        const space = "  ".repeat(page.directory.split("/").length);
+        console.log(`${space}Processing ${page.directory}`);
 
-        const fullSectionDir = join(this._contentRoot, section.directory);
-        const inputFile = join(fullSectionDir, "index.md");
+        const fullPageDir = join(this._contentRoot, page.directory);
+        const inputFile = join(fullPageDir, "index.md");
 
-        section.src = readFileSync(inputFile).toString("utf-8");
-        section.content = this._mdConverter.makeHtml(section.src);
-        section.metadata = parse(this._mdConverter.getMetadata(true) as string);
+        page.src = readFileSync(inputFile).toString("utf-8");
+        page.content = this._mdConverter.makeHtml(page.src);
+        page.metadata = parse(this._mdConverter.getMetadata(true) as string);
 
         // process children
 
-        for (const childSectionDir of readdirSync(fullSectionDir)) {
+        for (const childPageDir of readdirSync(fullPageDir)) {
 
-            if (statSync(join(fullSectionDir, childSectionDir)).isDirectory()) {
+            if (statSync(join(fullPageDir, childPageDir)).isDirectory()) {
 
-                const childSection: ISectionContent = {
-                    name: childSectionDir,
-                    directory: join(section.directory, childSectionDir),
+                const childPage: IPage = {
+                    name: childPageDir,
+                    directory: join(page.directory, childPageDir),
                     content: "",
                     src: "",
                     metadata: {},
                     children: []
                 };
 
-                section.children.push(childSection);
+                page.children.push(childPage);
 
-                this.readSection(childSection);
+                this.readPage(childPage);
             }
         }
     }

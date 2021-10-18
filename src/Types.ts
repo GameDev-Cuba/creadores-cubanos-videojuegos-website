@@ -4,17 +4,12 @@ interface IConfig {
     language: string;
 }
 
-interface ISiteContent {
-
-    sections: ISectionContent[];
-}
-
-interface ISectionContent {
+interface IPage {
     name: string;
     directory: string;
     metadata: any;
     src: string;
     content: string;
-    parent?: ISectionContent;
-    children: ISectionContent[];
+    parent?: IPage;
+    children: IPage[];
 }

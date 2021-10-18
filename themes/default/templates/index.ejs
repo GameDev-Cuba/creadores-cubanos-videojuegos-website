@@ -10,5 +10,11 @@
     <p>
         Hola mundo!
     </p>
+
+    <% foreach(const child of page.children) { %>
+
+        <p><%= child.metadata.title %></p>
+
+    <% } %>
 </body>
 </html>
