@@ -2,4 +2,6 @@
 title: Estudios
 ---
 
-Los estudios.
+Alguno de los estudios de videojuegos radicados en Cuba.
+
+Tú también puedes registrar tu estudio. Para mayor información [entra aqui](/unete).

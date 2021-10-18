@@ -1,6 +1,5 @@
 ---
-title: El Blog!
+title: Blog
 ---
-# Este es el blog!
 
 hola blog

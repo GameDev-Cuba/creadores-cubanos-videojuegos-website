@@ -1,0 +1,32 @@
+<%- include("_header") %>
+
+    <%- include("../_page") %>
+
+        <div class="container">
+
+            <% page.children.forEach(child=> { %>
+
+                <div class="card mb-3 shadow-md border-1 border-primary p-2" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-sm-4">
+                            <img src="/<%= child.directory %>/<%= child.metadata.image %>" class="img-fluid rounded-3">
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%= child.metadata.title %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= child.metadata.description %>
+                                </p>
+                                <a class="" href="/<%= child.directory %>" role="button">Quiero saber más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+
+
+        </div> <!-- container -->
+
+        <%- include("_footer") %>

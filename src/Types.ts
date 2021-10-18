@@ -7,9 +7,9 @@ interface IConfig {
 interface IPage {
     name: string;
     directory: string;
+    section: string;
     metadata: any;
     src: string;
     content: string;
-    parent?: IPage;
     children: IPage[];
 }

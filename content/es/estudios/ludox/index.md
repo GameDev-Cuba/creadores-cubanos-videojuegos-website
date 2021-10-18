@@ -1,5 +1,8 @@
 ---
 title: Ludox
+image: ludox-banner.jpg
+description: Divertirse es aprender.
+view: show
 ---
 
-Ludox el estudio de los joven clubs.
+Divertirse es aprender.

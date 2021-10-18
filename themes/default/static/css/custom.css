@@ -1,0 +1,16 @@
+.main-header {
+    background-image: url(/images/banner1.jpg);
+    background-position: center;
+}
+
+.studio-header img {
+    height: 2em;
+}
+
+.studio-card img {
+    height: 4em;
+}
+
+footer {
+    margin-top: 4em;
+}

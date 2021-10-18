@@ -1,0 +1,20 @@
+<%- include("_header") %>
+
+<div class="container">
+
+    <div class="mt-5 studio-header alert alert-primary">
+
+        <h1 class="text-light">
+             <img src="/<%= page.directory %>/<%= page.metadata.image %>" class="rounded-2">
+             <%= page.metadata.title %>
+        </h1>
+
+    </div>
+
+    <p>
+        <%- page.content %>
+    </p>
+    
+</div>
+
+<%- include("_footer") %>

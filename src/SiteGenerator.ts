@@ -1,7 +1,9 @@
 import { parse } from "yaml";
-import { mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from "fs";
 import { join } from "path/posix";
 import Showdown from "showdown";
+import { renderFile } from "ejs";
+import { copyDir } from "./copyDir";
 
 export class SiteGenerator {
 
@@ -9,7 +11,9 @@ export class SiteGenerator {
     private _contentRoot: string;
     private _mdConverter: Showdown.Converter;
     private _outputDir: string;
-    private _siteContent?: IPage;
+    private _homePage?: IPage;
+    private _themeDir: string;
+    private _templatesDir: string;
 
     constructor() {
 
@@ -24,30 +28,33 @@ export class SiteGenerator {
         this._config = parse(readFileSync("config.yaml", "utf-8")) as IConfig;
 
         this._contentRoot = join("content", this._config.language);
+        this._themeDir = join("themes", this._config.theme);
+        this._templatesDir = join(this._themeDir, "templates");
 
     }
 
     private parse() {
 
-        this._siteContent = {
-            name: "Home",
-            directory: ".",
+        this._homePage = {
+            name: this._config.title,
+            section: "",
+            directory: "",
             children: [],
             content: "",
             src: "",
             metadata: {},
         };
 
-        this.readPage(this._siteContent);
+        this.readPage(this._homePage);
 
-        console.log(JSON.stringify(this._siteContent, null, 2));
+        console.log(JSON.stringify(this._homePage, null, 2));
     }
 
-    generate() {
+    async generate() {
 
         this.parse();
 
-        if (!this._siteContent) {
+        if (!this._homePage) {
 
             console.log("An error?");
 
@@ -59,16 +66,43 @@ export class SiteGenerator {
         rmSync(this._outputDir, { recursive: true, force: true });
         mkdirSync(this._outputDir, { recursive: true });
 
-        this.generatePage(this._siteContent);
+        // copy static content
+
+        copyDir(join(this._themeDir, "static"), this._outputDir);
+
+        this.generatePage(this._homePage);
     }
 
-    private generatePage(page: IPage) {
+    private async generatePage(page: IPage) {
 
         const outDir = join("www", page.directory);
 
-        mkdirSync(outDir, {recursive: true});
+        mkdirSync(outDir, { recursive: true });
 
-        writeFileSync(join(outDir, "index.html"), page.content);
+        let view = "index.ejs";
+
+        if (page.metadata.view) {
+
+            view = page.metadata.view + ".ejs";
+        }
+
+        const templateFile = join(this._templatesDir, page.section, view);
+
+        console.log(`Loading template ${templateFile}`);
+
+        const output = await renderFile(templateFile, { page, site: this._homePage },
+            {
+                views: [this._templatesDir]
+            });
+
+        writeFileSync(join(outDir, "index.html"), output);
+
+        const assetsDir = join(this._contentRoot, page.directory, "assets");
+
+        if (existsSync(assetsDir) && statSync(assetsDir).isDirectory()) {
+
+            copyDir(assetsDir, outDir);
+        }
 
         for (const child of page.children) {
 
@@ -92,11 +126,17 @@ export class SiteGenerator {
 
         for (const childPageDir of readdirSync(fullPageDir)) {
 
+            if (childPageDir === "assets") {
+
+                continue;
+            }
+
             if (statSync(join(fullPageDir, childPageDir)).isDirectory()) {
 
                 const childPage: IPage = {
                     name: childPageDir,
                     directory: join(page.directory, childPageDir),
+                    section: page.section === "" ? childPageDir : page.section,
                     content: "",
                     src: "",
                     metadata: {},
