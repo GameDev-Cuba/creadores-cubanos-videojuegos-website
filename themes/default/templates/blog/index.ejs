@@ -1,0 +1,25 @@
+<%- include("_header") %>
+
+    <%- include("_page") %>
+
+        <div class="container">
+
+            <% page.children.forEach(post=> { %>
+
+                <div class="card mb-2 border-primary">
+
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <%= post.metadata.title %>
+                        </h3>
+                    </div>
+
+                </div>
+
+                <% }) %>
+
+        </div>
+
+        here
+
+        <%- include("_footer") %>

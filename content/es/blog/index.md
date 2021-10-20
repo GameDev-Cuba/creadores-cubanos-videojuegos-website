@@ -2,4 +2,4 @@
 title: Blog
 ---
 
-hola blog
+Noticias, análsis, relases, todo sobre la comunidad gamedev cubana.

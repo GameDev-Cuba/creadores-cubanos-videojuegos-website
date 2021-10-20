@@ -79,14 +79,39 @@ export class SiteGenerator {
 
         mkdirSync(outDir, { recursive: true });
 
+        const isChild = page.directory.startsWith(page.section + "/");
+
         let view = "index.ejs";
+        let templateFile: string;
+
+        if (isChild) {
+
+            if (existsSync(join(this._templatesDir, page.section, "item.ejs"))) {
+
+                view = "item.ejs";
+            }
+        }
 
         if (page.metadata.view) {
 
             view = page.metadata.view + ".ejs";
         }
 
-        const templateFile = join(this._templatesDir, page.section, view);
+        templateFile = join(this._templatesDir, page.section, view);
+
+        if (!existsSync(templateFile)) {
+
+            console.log(`Looking for child template in ${page.section}`)
+
+            templateFile = join(this._templatesDir, page.section, "item.ejs");
+
+            if (!existsSync(templateFile)) {
+
+                console.error(`ERROR: Template not found for page "${page.directory}"`);
+
+                return;
+            }
+        }
 
         console.log(`Loading template ${templateFile}`);
 

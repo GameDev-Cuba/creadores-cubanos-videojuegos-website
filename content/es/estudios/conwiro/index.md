@@ -2,7 +2,6 @@
 title: Conwiro
 description: Every person has dreams, we can help you to fulfill yours working with us.
 image: conwiro-banner.png
-view: show
 ---
 
 ![servicios](conwiro-services.png)
