@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/index.js",
+    "build": "node bin/index.js",
     "tsc": "tsc --watch -p src",
     "www": "http-server www -p 8000 -c-1"
   },

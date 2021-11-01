@@ -5,7 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= site.metadata.title %> </title>
+        <!-- open-graph card -->
+    <% const title = site === page? site.metadata.title : (page.metadata.title + " | " + site.metadata.title) %>
+    <meta name="og:title" content="<%= title %>">
+    <meta name="og:description" content="<%= page.metadata.description %>">
+    <meta name="og:image" content="/<%= page.metadata.image? (page.directory + "/" + page.metadata.image) : "images/banner1.jpg" %>">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@GameDevCuba">
+    <meta name="twitter:creator" content="@GameDevCuba">
+    <title><%= title %> </title>
+
 
     <link rel="stylesheet" href="/bootstrap/simplex/bootstrap.min.css">
     <link rel="stylesheet" href="/css/custom.css">
