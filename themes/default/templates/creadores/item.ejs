@@ -22,7 +22,7 @@
 
     </div>
 
-    <div class="container fs-5 mt-4">
+    <div class="container mt-4">
         <%- page.content %>
     </div>
 
@@ -42,7 +42,7 @@
             
             <div class="card mb-5 bg-transparent border-0">
                 <div class="row g-0">
-                  <div class="col-md-2 text-center bg-primary">
+                  <div class="col-md-2 text-center">
                     <img src="/<%= studio.directory %>/<%= studio.metadata.image %>" 
                         class="img-fluid" alt="<%= studio.metadata.title %>">
                   </div>
@@ -52,6 +52,42 @@
                       <p class="card-text"><%= studio.metadata.description %></p> 
                       <p>
                         <a class="card-link" href="/<%= studio.directory %>" role="button">Quiero saber más &RightArrow;</a>
+                      </p>                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <% } %>
+
+    </div>
+
+    <div class="container">
+        <% 
+            const productos = (page.metadata.products || [])
+                .map(productName => site.__productos["__" + productName]);
+        %>
+
+        <% if (productos.length > 0) { %>
+            <div class="mt-5 mb-5">
+                <h3 class="text-center">Productos</h3>
+            </div>
+        <% } %>
+
+        <% for(const producto of productos) {  %>
+            
+            <div class="card mb-5 bg-transparent border-0">
+                <div class="row g-0">
+                  <div class="col-md-2 text-center">
+                    <img src="/<%= producto.directory %>/<%= producto.metadata.image %>" 
+                        class="img-fluid" alt="<%= producto.metadata.title %>">
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h3 class="card-title"><%= producto.metadata.title %></h3>
+                      <p class="card-text"><%= producto.metadata.description %></p> 
+                      <p>
+                        <a class="card-link" href="/<%= producto.directory %>" role="button">Quiero saber más &RightArrow;</a>
                       </p>                     
                     </div>
                   </div>

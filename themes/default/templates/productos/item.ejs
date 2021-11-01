@@ -6,48 +6,76 @@
             <%= page.metadata.title %>
         </h1>
 
-        <img src="/<%= page.directory %>/<%= page.metadata.image %>" class="img-fluid m-5 mb-0">
+        <p class="text-muted fs-4">
+            <%= page.metadata.description %>
+        </p>
 
-    </div>
+        <img src="/<%= page.directory %>/<%= page.metadata.image %>" class="img-fluid mt-5 mb-0">
 
-    <div class="container fs-5 mt-4">
-        <%- page.content %>
     </div>
 
     <div class="container">
-        <% 
-            const studios = site.__estudios.children
-                .filter(s => (s.metadata.team ?? []).indexOf(page.name) >= 0);
-        %>
-
-        <% if (studios.length > 0) { %>
-            <div class="mt-5 mb-5">
-                <h3 class="text-center">Estudios de Videojuegos</h3>
+        <div class="row">
+            <div class="col-md-8 page-content mt-4">
+                <%- page.content %>
             </div>
-        <% } %>
+            <div class="col-md-4">
+                <% const studios=site.__estudios.children .filter(s=> (s.metadata.products ?? []).indexOf(page.name) >=
+                    0);
 
-        <% for(const studio of studios) {  %>
-            
-            <div class="card mb-5 bg-transparent border-0">
-                <div class="row g-0">
-                  <div class="col-md-2 text-center bg-primary">
-                    <img src="/<%= studio.directory %>/<%= studio.metadata.image %>" 
-                        class="img-fluid" alt="<%= studio.metadata.title %>">
-                  </div>
-                  <div class="col-md-10">
-                    <div class="card-body">
-                      <h3 class="card-title"><%= studio.metadata.title %></h3>
-                      <p class="card-text"><%= studio.metadata.description %></p> 
-                      <p>
-                        <a class="card-link" href="/<%= studio.directory %>" role="button">Quiero saber más &RightArrow;</a>
-                      </p>                     
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    const creadores = site.__creadores.children
+                    .filter(creador => (creador.metadata.products || []).indexOf(page.name) >= 0);
+                    %>
 
-        <% } %>
+                    <% if (studios.length + creadores.length> 0) { %>
+                        <div class="mt-5 mb-5">
+                            <h3>Desarrolladores</h3>
+                        </div>
+                        <% } %>
 
+                            <% for(const studio of studios) { %>
+
+                                <div class="card mb-5 bg-transparent border-0">
+                                    <img src="/<%= studio.directory %>/<%= studio.metadata.image %>"
+                                            class="img-fluid card-img-top" alt="<%= studio.metadata.title %>">
+                                    <div class="card-body">
+                                        <h3 class="card-title">
+                                            <%= studio.metadata.title %>
+                                        </h3>
+                                        <p class="card-text">
+                                            <%= studio.metadata.description %>
+                                        </p>
+                                        <p>
+                                            <a class="card-link" href="/<%= studio.directory %>"
+                                                role="button">Quiero saber más &RightArrow;</a>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <% } %>
+
+                                    <div class="list-group">
+
+                                        <% for (const creador of creadores) { %>
+                                            <div
+                                                class="list-group-item d-flex justify-content-left border-0 bg-transparent">
+                                                <img src="/<%= creador.directory %>/<%= creador.metadata.image %>"
+                                                    class="rounded-circle" style="width:5em;height: 5em;">
+                                                <div class="ps-4 pt-3">
+                                                    <a href="/<%= creador.directory %>">
+                                                        <%= creador.metadata.title %>
+                                                    </a>
+                                                    <p class="text-muted fs-6">
+                                                        <%= creador.metadata.description %>
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <% } %>
+
+                                    </div>
+            </div>
+        </div>
     </div>
 
     <%- include("_footer") %>

@@ -40,6 +40,11 @@
     border-radius: 50%;    
 }
 
+.page-content img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
 footer {
     margin-top: 4em;
 }
