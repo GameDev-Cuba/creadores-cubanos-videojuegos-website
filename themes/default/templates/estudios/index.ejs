@@ -2,30 +2,27 @@
 
     <%- include("../_page") %>
 
+        <br>
+
         <div class="container">
 
-            <% page.children.forEach(child=> { %>
+            <div class="card-group">
 
-                <div class="card mb-3 shadow-md border-1 border-primary p-2" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-sm-4">
-                            <img src="/<%= child.directory %>/<%= child.metadata.image %>" class="img-fluid rounded-3">
+                <% page.children.forEach(child=> { %>
+
+                    <div class="studio-card card m-2 mb-5 border-0 bg-transparent" style="width: 18rem;">
+                        <img src="/<%= child.directory %>/<%= child.metadata.image %>" class="img-fluid">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= child.metadata.title %></h5>
+                          <p class="card-text"><%= child.metadata.description %></p>
                         </div>
-                        <div class="col-sm-8">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <%= child.metadata.title %>
-                                </h5>
-                                <p class="card-text">
-                                    <%= child.metadata.description %>
-                                </p>
-                                <a class="" href="/<%= child.directory %>" role="button">Quiero saber más</a>
-                            </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="/<%= child.directory %>" class="btn btn-primary">Quiero saber más &RightArrow;</a>
                         </div>
-                    </div>
-                </div>
+                      </div>                    
                 <% }); %>
-
+            
+            </div> <!-- group -->
 
         </div> <!-- container -->
 

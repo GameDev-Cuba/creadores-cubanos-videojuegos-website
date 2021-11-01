@@ -11,5 +11,6 @@ interface IPage {
     metadata: any;
     src: string;
     content: string;
+    summary: string;
     children: IPage[];
 }

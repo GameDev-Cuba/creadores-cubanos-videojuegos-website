@@ -41,13 +41,12 @@ export class SiteGenerator {
             directory: "",
             children: [],
             content: "",
+            summary: "",
             src: "",
             metadata: {},
         };
 
         this.readPage(this._homePage);
-
-        console.log(JSON.stringify(this._homePage, null, 2));
     }
 
     async generate() {
@@ -66,11 +65,36 @@ export class SiteGenerator {
         rmSync(this._outputDir, { recursive: true, force: true });
         mkdirSync(this._outputDir, { recursive: true });
 
+        // copy data
+
+        writeFileSync(join(this._outputDir, "data.json"), JSON.stringify(this._homePage, null, 2));
+
+        // add extra data fields
+
+        this.boostPageData(this._homePage);
+
         // copy static content
 
         copyDir(join(this._themeDir, "static"), this._outputDir);
 
         this.generatePage(this._homePage);
+    }
+
+    private boostPageData(page: IPage) {
+
+        if (page.children) {
+
+            for(const child of page.children) {
+
+                (page as any)["__" + child.name] = child;
+
+                this.boostPageData(child);
+            }
+        }
+
+        for(const child of (page.children || [])) {
+
+        }
     }
 
     private async generatePage(page: IPage) {
@@ -115,7 +139,11 @@ export class SiteGenerator {
 
         console.log(`Loading template ${templateFile}`);
 
-        const output = await renderFile(templateFile, { page, site: this._homePage },
+        const output = await renderFile(templateFile, {
+            page,
+            site: this._homePage,
+            utils
+        },
             {
                 views: [this._templatesDir]
             });
@@ -126,7 +154,13 @@ export class SiteGenerator {
 
         if (existsSync(assetsDir) && statSync(assetsDir).isDirectory()) {
 
-            copyDir(assetsDir, outDir);
+            const assetsOutDir = join(outDir, "assets");
+
+            mkdirSync(assetsOutDir, {
+                recursive: true
+            });
+
+            copyDir(assetsDir, assetsOutDir);
         }
 
         for (const child of page.children) {
@@ -145,7 +179,12 @@ export class SiteGenerator {
 
         page.src = readFileSync(inputFile).toString("utf-8");
         page.content = this._mdConverter.makeHtml(page.src);
-        page.metadata = parse(this._mdConverter.getMetadata(true) as string);
+
+        const metadataSrc = this._mdConverter.getMetadata(true) as string;
+        page.metadata = parse(metadataSrc as string);
+
+        const i = page.src.lastIndexOf("---");
+        page.summary = page.src.substring(i + 3, i + 3 + 200);
 
         // process children
 
@@ -163,6 +202,7 @@ export class SiteGenerator {
                     directory: join(page.directory, childPageDir),
                     section: page.section === "" ? childPageDir : page.section,
                     content: "",
+                    summary: "",
                     src: "",
                     metadata: {},
                     children: []
@@ -173,5 +213,21 @@ export class SiteGenerator {
                 this.readPage(childPage);
             }
         }
+    }
+}
+
+const utils = {
+
+    sortPagesByDate: function (items: IPage[]) {
+
+        return [...items].sort((a, b) => {
+
+            const [day1, month1, year1] = a.metadata.date.split("/");
+            const [day2, month2, year2] = b.metadata.date.split("/");
+            const v1 = Number.parseInt(year1) * Number.parseInt(month1) * 400 + Number.parseInt(day1);
+            const v2 = Number.parseInt(year2) * Number.parseInt(month2) * 400 + Number.parseInt(day2);
+
+            return v2 - v1;
+        });
     }
 }

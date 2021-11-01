@@ -1,0 +1,29 @@
+<%- include("_header") %>
+
+    <%- include("../_page") %>
+
+        <br>
+
+        <div class="container">
+
+            <div class="card-group">
+
+                <% page.children.forEach(producto => { %>
+
+                    <div class="studio-card card m-2 mb-5 border-0 bg-transparent" style="width: 18rem;">
+                        <img src="/<%= producto.directory %>/<%= producto.metadata.image %>" class="img-fluid">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= producto.metadata.title %></h5>
+                          <p class="card-text"><%= producto.metadata.description %></p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="/<%= producto.directory %>" class="btn btn-info">Quiero saber más &RightArrow;</a>
+                        </div>
+                      </div>                    
+                <% }); %>
+            
+            </div> <!-- group -->
+
+        </div> <!-- container -->
+
+        <%- include("_footer") %>

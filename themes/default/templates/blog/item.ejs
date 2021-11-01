@@ -1,5 +1,26 @@
 <%- include("_header") %>
 
-<%- include("_page") %>
+    <div class="container-fluid p-5 mb-3">
 
-<%- include("_footer") %>
+        <div class="container">
+            <h1 class="display-5 fw-bold text-center">
+                <%= page.metadata.title %>
+            </h1>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <img class="img-fluid" src="<%= page.metadata.image %>">
+    </div>
+
+    <div class="p-3"></div>
+
+    <div class="container mt-5 fs-5">
+
+        <%- page.content %>
+
+        <p class="text-muted"><%= page.metadata.date %></p>
+
+    </div>
+
+    <%- include("_footer") %>

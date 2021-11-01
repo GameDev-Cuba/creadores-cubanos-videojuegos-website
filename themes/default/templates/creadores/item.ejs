@@ -1,0 +1,65 @@
+<%- include("_header") %>
+
+    <div class="container mt-5">
+
+        <div class="card border-0 bg-transparent">
+
+            <div class="text-center">
+                <img src="/<%= page.directory %>/<%= page.metadata.image %>" class="img-fluid rounded-circle m-5 mb-0"
+                    style="max-width: 20em;">
+            </div>
+
+            <div class="card-body">
+                <h1 class="card-title text-center text-primary">
+                    <%= page.metadata.title %>
+                </h1>
+                <div class="muted-text text-center">
+                    <%= page.metadata.description %>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container fs-5 mt-4">
+        <%- page.content %>
+    </div>
+
+    <div class="container">
+        <% 
+            const studios = site.__estudios.children
+                .filter(s => (s.metadata.team ?? []).indexOf(page.name) >= 0);
+        %>
+
+        <% if (studios.length > 0) { %>
+            <div class="mt-5 mb-5">
+                <h3 class="text-center">Estudios de Videojuegos</h3>
+            </div>
+        <% } %>
+
+        <% for(const studio of studios) {  %>
+            
+            <div class="card mb-5 bg-transparent border-0">
+                <div class="row g-0">
+                  <div class="col-md-2 text-center bg-primary">
+                    <img src="/<%= studio.directory %>/<%= studio.metadata.image %>" 
+                        class="img-fluid" alt="<%= studio.metadata.title %>">
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h3 class="card-title"><%= studio.metadata.title %></h3>
+                      <p class="card-text"><%= studio.metadata.description %></p> 
+                      <p>
+                        <a class="card-link" href="/<%= studio.directory %>" role="button">Quiero saber más &RightArrow;</a>
+                      </p>                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <% } %>
+
+    </div>
+
+    <%- include("_footer") %>

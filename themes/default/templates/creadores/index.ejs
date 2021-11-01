@@ -1,0 +1,40 @@
+<%- include("_header") %>
+
+    <%- include("../_page") %>
+
+        <br>
+
+        <div class="container">
+
+            <div class="row">
+
+                <% page.children.forEach(child=> { %>
+
+                    <div class="card border-0 bg-transparent d-flex text-center" style="width:20em;">
+
+                        <div class="card-body">
+
+                            <img src="/<%= child.directory %>/<%= child.metadata.image %>" class="profile-img">
+                        </div>
+                        <div class="card-body p-0">
+                            <h3>
+                                <a href="/<%= child.directory %>">
+                                    <%= child.metadata.title %>
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="card-body p-0">
+                            <div class="text-muted fs-6">
+                                <%= child.metadata.description %>
+                            </div>
+                        </div>
+                    </div>
+
+            <% }); %>
+            </div> <!-- row -->
+        </div>
+
+        </div> <!-- container -->
+
+        <%- include("_footer") %>

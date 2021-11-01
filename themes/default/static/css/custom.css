@@ -1,14 +1,43 @@
-.main-header {
+.main-header-img {
     background-image: url(/images/banner1.jpg);
     background-position: center;
+}
+
+.home-noticias-group .card {
+    min-width: 20em;
+}
+
+.home-noticias-group .card-img-top {
+    height: 24em;
+    object-fit: cover;
 }
 
 .studio-header img {
     height: 2em;
 }
 
+.studio-card {
+    min-width: 25em;
+}
+
 .studio-card img {
-    height: 4em;
+    object-fit: cover;
+    height: 20em;
+}
+
+.studio-main-card img {
+    object-fit: cover;
+    height: 30em;
+}
+
+.studio-main-card .card-body img {
+    max-width: 100%;
+}
+
+.profile-img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;    
 }
 
 footer {

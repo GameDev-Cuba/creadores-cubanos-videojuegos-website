@@ -1,20 +1,78 @@
 <%- include("_header") %>
 
-<div class="container">
+    <div class="container mt-5">
+        
+        <div class="studio-main-card card border-0 bg-transparent">
+            
+            <img src="/<%= page.directory %>/<%= page.metadata.image %>" class="img-fluid">
 
-    <div class="mt-5 studio-header alert alert-primary">
+            <div class="card-body">
+                <h1 class="card-title text-primary">
+                    <%= page.metadata.title %>
+                </h1>
+            </div>
+            <div class="card-body fs-5">
 
-        <h1 class="text-light">
-             <img src="/<%= page.directory %>/<%= page.metadata.image %>" class="rounded-2">
-             <%= page.metadata.title %>
-        </h1>
+                <div class="row row-cols-sm-1 row-cols-md-2">
+                    <div class="col mb-4">
+                        <%- page.content %>
+
+                        <h3 class="mt-5">Productos de <%= page.metadata.title %></h3>
+
+                        <% 
+                            const productos = (page.metadata.products || []).map(name => site.__productos["__" + name]);
+                        %>
+
+                        <div class="list-group">
+                        
+                            <% for (const producto of productos) { %>
+                                <div class="list-group-item d-flex justify-content-left border-0 bg-transparent">
+                                    <img src="/<%= producto.directory %>/<%= producto.metadata.image %>"
+                                    style="width:8em;height: 8em;">
+                                    <div class="ps-4 pt-3">
+                                        <a href="/<%= producto.directory %>">
+                                            <%= producto.metadata.title %>
+                                        </a>
+                                        <p class="text-muted fs-6"><%= producto.metadata.description %></p>
+                                    </div>
+                                </div>
+                            
+                            <% } %>
+
+                        </div> <!-- list group -->
+
+                    </div>
+                    <div class="col">
+
+                        <h3 class="">Equipo de <%= page.metadata.title %></h3>
+
+                        <% 
+                            const team = (page.metadata.team || []).map(name => site.__creadores["__" + name]);
+                        %>
+                        
+                        <div class="list-group">
+                        
+                            <% for (const dev of team) { %>
+                                    <div class="list-group-item d-flex justify-content-left border-0 bg-transparent">
+                                        <img src="/<%= dev.directory %>/<%= dev.metadata.image %>" class="rounded-circle"
+                                        style="width:5em;height: 5em;">
+                                        <div class="ps-4 pt-3">
+                                            <a href="/<%= dev.directory %>">
+                                                <%= dev.metadata.title %>
+                                            </a>
+                                            <p class="text-muted fs-6"><%= dev.metadata.description %></p>
+                                        </div>
+                                    </div>
+
+                            <% } %>
+
+                        </div> <!-- list group -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
-    <p>
-        <%- page.content %>
-    </p>
-    
-</div>
-
-<%- include("_footer") %>
+    <%- include("_footer") %>
