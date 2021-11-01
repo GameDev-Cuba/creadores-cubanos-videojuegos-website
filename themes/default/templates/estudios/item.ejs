@@ -30,10 +30,9 @@
                                     <img src="/<%= producto.directory %>/<%= producto.metadata.image %>"
                                     style="width:8em;height: 8em;">
                                     <div class="ps-4 pt-3">
-                                        <a href="/<%= producto.directory %>">
-                                            <%= producto.metadata.title %>
-                                        </a>
+                                        <h4><%= producto.metadata.title %></h4>
                                         <p class="text-muted fs-6"><%= producto.metadata.description %></p>
+                                        <a class="btn btn-info" href="/<%= producto.directory %>">Muéstrame más &RightArrow;</a>
                                     </div>
                                 </div>
                             

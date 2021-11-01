@@ -19,72 +19,145 @@
             <h2 class="text-center">Últimas Noticias</h2>
         </div>
 
-        <%         
-            const posts = utils.sortPagesByDate(site.__blog.children).slice(0, 3);
-        %>
+        <% const posts=utils.sortPagesByDate(site.__blog.children).slice(0, 3); %>
 
-        <div class="card-group home-noticias-group">
+            <div class="card-group home-noticias-group">
 
-        <% posts.forEach(post => { %>
+                <% posts.forEach(post=> { %>
 
-                <div class="card border-0 bg-transparent m-3">
-                    <img src="/<%= post.directory %>/<%= post.metadata.image %>" 
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h4 class="card-title"><%= post.metadata.title %></h4>
-                      <p class="text-muted"><%= post.metadata.date %></p>
-                      <p class="card-text"><%= post.metadata.description %></p>
+                    <div class="card border-0 bg-transparent m-3">
+                        <img src="/<%= post.directory %>/<%= post.metadata.image %>" class="card-img-top" alt="<%= post.metadata.title %>">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <%= post.metadata.title %>
+                            </h4>
+                            <p class="text-muted">
+                                <%= post.metadata.date %>
+                            </p>
+                            <p class="card-text">
+                                <%= post.metadata.description %>
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a class="card-link" href="/<%= post.directory %>" role="button">Leer el artículo completo
+                                &RightArrow;</a>
+                        </div>
                     </div>
-                    <div class="card-footer bg-transparent border-0">
-                      <a class="card-link" href="/<%= post.directory %>" role="button">Leer el artículo completo &RightArrow;</a>
-                    </div>
-                  </div>
-        <% }) %>
-        
-        </div> <!-- row -->
-        
-        <p class="text-end w-100 mt-5">
-            <a class="link-primary" href="/blog">Ver todas las noticias &RightArrow;</a>
-        </p>
+                    <% }) %>
 
-        <br>
-
-        <div class="m-5">
-            <h2 class="text-center">Nuestros Estudios</h2>
-        </div>
-
-        <br>
-
-        <% 
-          const estudios = site.__estudios.children.slice(0, 3);
-        %>
-
-        <% estudios.forEach(child => { %>
-
-            <div class="card mb-5 bg-transparent border-0">
-                <div class="row g-0">
-                  <div class="col-md-4 text-center">
-                    <img src="/<%= child.directory %>/<%= child.metadata.image %>" 
-                        class="img-fluid" alt="<%= child.metadata.title %>">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h3 class="card-title"><%= child.metadata.title %></h3>
-                      <p class="card-text"><%= child.metadata.description %></p> 
-                      <p>
-                        <a class="card-link" href="/<%= child.directory %>" role="button">Quiero saber más &RightArrow;</a>
-                      </p>                     
-                    </div>
-                  </div>
-                </div>
-              </div>
-            
-            <% }); %>
+            </div> <!-- row -->
 
             <p class="text-end w-100 mt-5">
-                <a class="link-primary" href="/estudios">Ver todos los estudios &RightArrow;</a>
+                <a class="link-primary" href="/blog">Ver todas las noticias &RightArrow;</a>
             </p>
-        
+
+            <br>
+
+            <div class="m-5">
+                <h2 class="text-center">Nuestros Estudios</h2>
+            </div>
+
+            <br>
+
+            <% const estudios = utils.shuffleArray(site.__estudios.children, { copy : true }).slice(0, 3); %>
+
+                <% estudios.forEach(child=> { %>
+
+                    <div class="card mb-5 bg-transparent border-0">
+                        <div class="row g-0">
+                            <div class="col-md-4 text-center">
+                                <img src="/<%= child.directory %>/<%= child.metadata.image %>" class="img-fluid"
+                                    alt="<%= child.metadata.title %>">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">
+                                        <%= child.metadata.title %>
+                                    </h3>
+                                    <p class="card-text">
+                                        <%= child.metadata.description %>
+                                    </p>
+                                    <a class="btn btn-primary" href="/<%= child.directory %>" role="button">Los quiero
+                                        conocer
+                                        &RightArrow;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <% }); %>
+
+                        <p class="text-end w-100 mt-5">
+                            <a class="link-primary" href="/estudios">Ver todos los estudios &RightArrow;</a>
+                        </p>
+
+                <div class="m-5">
+                    <h2 class="text-center">Nuestros Productos</h2>
+                </div>
+
+                <% 
+                const productos = utils.shuffleArray(site.__productos.children, {copy: true}).slice(0, 6); 
+                %>
+
+                <div class="card-group home-productos-group">
+
+                    <% for(const producto of productos) { %>
+
+                        <div class="card border-0 bg-transparent mb-4">
+                            <img src="/<%= producto.directory %>/<%= producto.metadata.image %>" class="card-img-top" alt="<%= producto.metadata.title %>">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <%= producto.metadata.title %>
+                                </h4>
+                                <p class="card-text">
+                                    <%= producto.metadata.description %>
+                                </p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <a class="btn btn-info" href="/<%= producto.directory %>" role="button">Muéstrame más &RightArrow;</a>
+                            </div>
+                        </div>
+
+                    <% } %>
+                </div>
+
+                <div class="m-5">
+                    <h2 class="text-center">Nuestros Creadores</h2>
+                </div>
+
+
+                <% 
+                const creadores = utils.shuffleArray(site.__creadores.children, {copy: true}).slice(0, 12); 
+                %>
+
+                <div class="card-group">
+
+                <% for (const creador of creadores) { %>
+
+                    <div class="card border-0 bg-transparent d-flex text-center" style="width:20em;">
+
+                        <div class="card-body">
+                    
+                            <img src="/<%= creador.directory %>/<%= creador.metadata.image %>" class="profile-img">
+                        </div>
+                        <div class="card-body p-0">
+                            <h3>
+                                <a href="/<%= creador.directory %>">
+                                    <%= creador.metadata.title %>
+                                </a>
+                            </h3>
+                        </div>
+                    
+                        <div class="card-body p-0">
+                            <div class="text-muted fs-6">
+                                <%= creador.metadata.description %>
+                            </div>
+                        </div>
+                    </div>
+
+                <% } %>
+            </div>
+
     </div> <!-- containter -->
 
     <%- include("_footer") %>

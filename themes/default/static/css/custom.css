@@ -12,6 +12,14 @@
     object-fit: cover;
 }
 
+.home-productos-group .card {
+    min-width: 20em;
+}
+.home-productos-group .card-img-top {
+    height: 24em;
+    object-fit: cover;
+}
+
 .studio-header img {
     height: 2em;
 }

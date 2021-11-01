@@ -51,7 +51,7 @@
                       <h3 class="card-title"><%= studio.metadata.title %></h3>
                       <p class="card-text"><%= studio.metadata.description %></p> 
                       <p>
-                        <a class="card-link" href="/<%= studio.directory %>" role="button">Quiero saber más &RightArrow;</a>
+                        <a class="btn btn-primary" href="/<%= studio.directory %>" role="button">Los quiero conocer &RightArrow;</a>
                       </p>                     
                     </div>
                   </div>
@@ -74,27 +74,21 @@
             </div>
         <% } %>
 
-        <% for(const producto of productos) {  %>
-            
-            <div class="card mb-5 bg-transparent border-0">
-                <div class="row g-0">
-                  <div class="col-md-2 text-center">
-                    <img src="/<%= producto.directory %>/<%= producto.metadata.image %>" 
-                        class="img-fluid" alt="<%= producto.metadata.title %>">
-                  </div>
-                  <div class="col-md-10">
-                    <div class="card-body">
-                      <h3 class="card-title"><%= producto.metadata.title %></h3>
-                      <p class="card-text"><%= producto.metadata.description %></p> 
-                      <p>
-                        <a class="card-link" href="/<%= producto.directory %>" role="button">Quiero saber más &RightArrow;</a>
-                      </p>                     
-                    </div>
-                  </div>
-                </div>
+        <div class="list-group">
+          <% for(const producto of productos) {  %>
+              
+            <div class="list-group-item d-flex justify-content-left border-0 bg-transparent">
+              <img src="/<%= producto.directory %>/<%= producto.metadata.image %>"
+              style="width:8em;height: 8em;">
+              <div class="ps-4 pt-3">
+                  <h4><%= producto.metadata.title %></h4>
+                  <p class="text-muted fs-6"><%= producto.metadata.description %></p>
+                  <a class="btn btn-info" href="/<%= producto.directory %>">Muéstrame más &RightArrow;</a>
               </div>
+            </div>
 
-        <% } %>
+          <% } %>
+        </div>
 
     </div>
 

@@ -4,6 +4,7 @@ import { join } from "path/posix";
 import Showdown from "showdown";
 import { renderFile } from "ejs";
 import { copyDir } from "./copyDir";
+import shuffleArray from "shuffle-array";
 
 export class SiteGenerator {
 
@@ -229,5 +230,6 @@ const utils = {
 
             return v2 - v1;
         });
-    }
+    },
+    shuffleArray
 }
