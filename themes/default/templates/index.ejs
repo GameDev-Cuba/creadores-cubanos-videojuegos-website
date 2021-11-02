@@ -1,19 +1,41 @@
 <%- include("_header") %>
 
     <div class="main-header-img p-5 mb-4" style="background-image: url(/<%= site.metadata.banner_image %>);">
-        <div class="container py-5">
+        <div class="container py-5 d-flex justify-content-start">
             <h1 class="display-5 fw-bold text-light">
                 <%= page.metadata.title %>
             </h1>
             <p class="col-md-8 fs-4 text-white">
                 <%= page.metadata.description %>
             </p>
-            <a href="/estudios" class="btn btn-primary btn-lg" type="button">Estudios de Videojuegos</a>
+            <a href="<%= site.metadata.call_to_action.url %>" class="btn btn-primary btn-lg" type="button">
+                <%= site.metadata.call_to_action.label %> &RightArrow;
+            </a>
         </div>
     </div>
 
 
     <div class="container">
+
+
+        <% 
+            for(const msg of page.metadata.featured_messages) { %>
+
+                <div class="m-4 p-4"></div>
+                <div class="row">
+                
+                    <div class="col-md-6 text-primary mb-4">
+                        <h3 class="fs-1"><%- msg.title %></h3>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="fs-4 border-primary border-0 border-start ps-4" style="border-left-width: 10px !important;">
+                            <%- msg.body %>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+
+        <div class="m-4 p-4"></div>
 
         <div class="alert m-5">
             <h2 class="text-center">Últimas Noticias</h2>
