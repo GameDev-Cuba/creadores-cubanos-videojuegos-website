@@ -7,7 +7,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <p>Copyright 2021 Creadores Cubanos de Videojuegos</p>
-                <p>Síguenos en <a href="#">Telegram</a>, <a href="#">Twitter</a>, <a href="#">Facebook</a><div class=""></div></p>
+                <p>
+                    Síguenos en: 
+                    <ul>
+                        <%- site.metadata.social_accounts.map(info => `<li><a href='${info.url}'>${info.name}</a></li>`).join("\n") %>
+                    </ul>
+                </p>
                 <p>Contribuye a esta plataforma en <a href="#">nuestra cuenta de GitHub</a>.</p>
             </div>
         </div>

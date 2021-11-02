@@ -1,5 +1,4 @@
 .main-header-img {
-    background-image: url(/images/banner1.jpg);
     background-position: center;
 }
 
@@ -25,7 +24,7 @@
 }
 
 .studio-card {
-    min-width: 25em;
+    min-width: 20em;
 }
 
 .studio-card img {
