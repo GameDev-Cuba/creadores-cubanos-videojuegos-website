@@ -29,6 +29,12 @@ Para instalarte el sitio en tu PC, debes seguir estos pasos:
 
     Y abres el navegador en [http://localhost:8000](http://localhost:8000).
 
+Si deseas publicar algún cambio, debes seguir el siguiente flujo:
+
+* Creas una rama nueva o haces un fork del repositorio.
+* Realizas las modificaciones en tu rama.
+* Publicas tu rama y haces un Pull Request a la rama `main` del repositorio original.
+
 
 ## Gestión de los contenido
 
