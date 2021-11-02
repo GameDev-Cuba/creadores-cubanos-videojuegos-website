@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- open-graph card -->
+    
+    <!-- open-graph card -->
     <% const title = site === page? site.metadata.title : (page.metadata.title + " | " + site.metadata.title) %>
     <meta name="og:title" content="<%= title %>">
     <meta name="og:description" content="<%= page.metadata.description %>">
-    <meta name="og:image" content="/<%= page.metadata.image? (page.directory + "/" + page.metadata.image) : "images/banner1.jpg" %>">
+    <meta name="og:image" content="/<%= page.metadata.image? (page.directory + "/" + page.metadata.image) : site.metadata.banner_image %>">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@GameDevCuba">
     <meta name="twitter:creator" content="@GameDevCuba">
+
+    <!-- website-->
     <title><%= title %> </title>
+    <link rel="icon" type="image/x-icon" href="/<%= site.metadata.favicon %>">
 
 
     <link rel="stylesheet" href="/bootstrap/simplex/bootstrap.min.css">
@@ -28,8 +32,8 @@
     <nav class="navbar navbar-expand-lg border-0 navbar-light text-primary">
         <div class="container-fluid">
             <a class="navbar-brand text-primary" href="/">
-                <img src="/images/logo.png" alt="" height="30" class="d-inline-block align-text-top">
-                Creadores Cubanos de Videojuegos
+                <img src="<%= site.directory %>/<%= site.metadata.logo_image %>" alt="" height="30" class="d-inline-block align-text-top">
+                CCV
               </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
