@@ -3,28 +3,28 @@
     <div class="container mt-5 text-center">
 
         <h1 class="card-title text-primary">
-            <%= page.metadata.title %>
+            <%= $page.title %>
         </h1>
 
         <p class="text-muted fs-4">
-            <%= page.metadata.description %>
+            <%= $page.description %>
         </p>
 
-        <img src="/<%= page.directory %>/<%= page.metadata.image %>" class="img-fluid mt-5 mb-0">
+        <img src="/<%= $page.$path %>/<%= $page.image %>" class="img-fluid mt-5 mb-0">
 
     </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md-8 page-content mt-4">
-                <%- page.content %>
+                <%- $page.$content %>
             </div>
             <div class="col-md-4">
-                <% const studios=site.__estudios.children .filter(s=> (s.metadata.products ?? []).indexOf(page.name) >=
+                <% const studios=site.__estudios.$pages .filter(s=> (s.products ?? []).indexOf($page.name) >=
                     0);
 
-                    const creadores = site.__creadores.children
-                    .filter(creador => (creador.metadata.products || []).indexOf(page.name) >= 0);
+                    const creadores = site.__creadores.$pages
+                    .filter(creador => (creador.products || []).indexOf($page.name) >= 0);
                     %>
 
                     <% if (studios.length + creadores.length> 0) { %>
@@ -36,17 +36,17 @@
                             <% for(const studio of studios) { %>
 
                                 <div class="card mb-5 bg-transparent border-0">
-                                    <img src="/<%= studio.directory %>/<%= studio.metadata.image %>"
-                                            class="img-fluid card-img-top" alt="<%= studio.metadata.title %>">
+                                    <img src="/<%= studio.$path %>/<%= studio.image %>"
+                                            class="img-fluid card-img-top" alt="<%= studio.title %>">
                                     <div class="card-body">
                                         <h3 class="card-title">
-                                            <%= studio.metadata.title %>
+                                            <%= studio.title %>
                                         </h3>
                                         <p class="card-text">
-                                            <%= studio.metadata.description %>
+                                            <%= studio.description %>
                                         </p>
                                         <p>
-                                            <a class="btn btn-primary" href="/<%= studio.directory %>"
+                                            <a class="btn btn-primary" href="/<%= studio.$path %>"
                                                 role="button">Los quiero conocer &RightArrow;</a>
                                         </p>
                                     </div>
@@ -59,14 +59,14 @@
                                         <% for (const creador of creadores) { %>
                                             <div
                                                 class="list-group-item d-flex justify-content-left border-0 bg-transparent">
-                                                <img src="/<%= creador.directory %>/<%= creador.metadata.image %>"
+                                                <img src="/<%= creador.$path %>/<%= creador.image %>"
                                                     class="rounded-circle" style="width:5em;height: 5em;">
                                                 <div class="ps-4 pt-3">
-                                                    <a href="/<%= creador.directory %>">
-                                                        <%= creador.metadata.title %>
+                                                    <a href="/<%= creador.$path %>">
+                                                        <%= creador.title %>
                                                     </a>
                                                     <p class="text-muted fs-6">
-                                                        <%= creador.metadata.description %>
+                                                        <%= creador.description %>
                                                     </p>
                                                 </div>
                                             </div>

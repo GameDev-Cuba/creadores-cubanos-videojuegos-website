@@ -1,6 +1,6 @@
 ---
 title: Arian Fornaris
-description: Autor de Phaser Editor 2D
+description: Desarrollador de videojuegos y autor de Phaser Editor 2D
 image: assets/profile.jpg
 products:
     - arian-phaser-editor-2d
@@ -11,7 +11,7 @@ He creado algunos juegos para los Global Game Jam realizados en Cuba. Además, h
 
 La programación de Phaser Editor 2D consume casi todo mi tiempo, pero siempre estoy abierto a colaborar en otros proyectos.
 
-Mi experiencia es sobre todo utilizando el framework [Phaser.io](https://phaser.io) y el propio **Phaser Editor 2D** :).
+Mi experiencia es sobre todo utilizando el framework [Phaser.io](https://phaser.io) y el propio [Phaser Editor 2D](https://phasereditor2d.com) 🤓.
 
 Me puedes encontrar en:
 

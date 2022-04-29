@@ -6,31 +6,31 @@
 
             <% 
             
-            const posts = utils.sortPagesByDate(page.children);
+            const posts = $page.$pages;
             
             %>
 
-            <% posts.forEach(post=> { %>
+            <% for(const post of posts) { %>
 
                 <div class="card mb-5 bg-transparent border-0">
                     <div class="row g-0">
                         <div class="col-md-4 text-center">
-                        <img src="/<%= post.directory %>/<%= post.metadata.image %>" 
-                            class="img-fluid" alt="<%= post.metadata.title %>">
+                        <img src="/<%= post.$path %>/<%= post.image %>" 
+                            class="img-fluid" alt="<%= post.title %>">
                         </div>
                         <div class="col-md-8">
                         <div class="card-body">
-                            <h3 class="card-title"><%= post.metadata.title %></h3>
-                            <p class="card-text"><%= post.metadata.description %></p> 
+                            <h3 class="card-title"><%= post.title %></h3>
+                            <p class="card-text"><%= post.description %></p> 
                             <p>
-                            <a class="card-link" href="/<%= post.directory %>" role="button">Leer el artítculo completo &RightArrow;</a>
+                            <a class="card-link" href="/<%= post.$path %>" role="button">Leer el artítculo completo &RightArrow;</a>
                             </p>                     
                         </div>
                         </div>
                     </div>
                 </div>
 
-            <% }) %>
+            <% } %>
 
         </div>
 

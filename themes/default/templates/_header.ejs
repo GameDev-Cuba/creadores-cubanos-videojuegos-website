@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- open-graph card -->
-    <% const title = site === page? site.metadata.title : (page.metadata.title + " | " + site.metadata.title) %>
+    <% const title = site === $page? site.title : ($page.title + " | " + site.title) %>
     <meta name="og:title" content="<%= title %>">
-    <meta name="og:description" content="<%= page.metadata.description %>">
-    <meta name="og:image" content="/<%= page.metadata.image? (page.directory + "/" + page.metadata.image) : site.metadata.banner_image %>">
+    <meta name="og:description" content="<%= $page.description %>">
+    <meta name="og:image" content="/<%= $page.image? ($page.$path + "/" + $page.image) : site.banner_image %>">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@GameDevCuba">
     <meta name="twitter:creator" content="@GameDevCuba">
 
     <!-- website-->
     <title><%= title %> </title>
-    <link rel="icon" type="image/x-icon" href="/<%= site.metadata.favicon %>">
+    <link rel="icon" type="image/x-icon" href="/<%= site.favicon %>">
 
 
     <link rel="stylesheet" href="/bootstrap/simplex/bootstrap.min.css">
@@ -32,8 +32,8 @@
     <nav class="navbar navbar-expand-lg border-0 navbar-light text-primary">
         <div class="container-fluid">
             <a class="navbar-brand text-primary" href="/">
-                <img src="<%= site.directory %>/<%= site.metadata.logo_image %>" alt="" height="30" class="d-inline-block align-text-top">
-                <%= site.metadata.short_title %>
+                <img src="<%= site.$path %>/<%= site.logo_image %>" alt="" height="30" class="d-inline-block align-text-top">
+                <%= site.short_title %>
               </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -45,14 +45,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     
-                    <% site.children.forEach(child=> { %>
+                    <% for(const child of site.$pages) { %>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" aria-current="page" href="/<%= child.directory %>">
-                                <%= child.metadata.title %>
+                            <a class="nav-link text-primary" aria-current="page" href="/<%= child.$path %>">
+                                <%= child.title %>
                             </a>
                         </li>
-                    <% }); %>
-                    
+                    <% } %>
                 </ul>
             </div>
         </div>
