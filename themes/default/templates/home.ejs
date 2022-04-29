@@ -1,15 +1,15 @@
 <%- include("_header") %>
 
-    <div class="main-header-img p-5 mb-4" style="background-image: url(/<%= site.metadata.banner_image %>);">
+    <div class="main-header-img p-5 mb-4" style="background-image: url(/<%= site.banner_image %>);">
         <div class="container py-5">
             <h1 class="display-5 fw-bold text-light">
-                <%= page.metadata.title %>
+                <%= $page.title %>
             </h1>
             <p class="col-md-8 fs-4 text-white">
-                <%= page.metadata.description %>
+                <%= $page.description %>
             </p>
-            <a href="<%= site.metadata.call_to_action.url %>" class="btn btn-primary btn-lg" type="button">
-                <%= site.metadata.call_to_action.label %> &RightArrow;
+            <a href="<%= site.call_to_action.url %>" class="btn btn-primary btn-lg" role="button">
+                <%= site.call_to_action.label %> &RightArrow;
             </a>
         </div>
     </div>
@@ -17,9 +17,8 @@
 
     <div class="container">
 
-
         <% 
-            for(const msg of page.metadata.featured_messages) { %>
+            for(const msg of $page.featured_messages) { %>
 
                 <div class="m-4 p-4"></div>
                 <div class="row">
@@ -37,35 +36,41 @@
 
         <div class="m-4 p-4"></div>
 
+        <div class="w-100 d-flex justify-content-center">
+            <a href="<%= site.repository %>" class="btn btn-lg btn-primary" target="_blank">
+                <%= site.contribute_message %>
+            </a>
+        </div>
+
         <div class="alert m-5">
             <h2 class="text-center">Últimas Noticias</h2>
         </div>
 
-        <% const posts=utils.sortPagesByDate(site.__blog.children).slice(0, 3); %>
+        <% const posts = site.__blog.$pages.slice(0, 3); %>
 
             <div class="card-group home-noticias-group">
 
-                <% posts.forEach(post=> { %>
+                <% for(const post of posts) { %>
 
                     <div class="card border-0 bg-transparent m-3">
-                        <img src="/<%= post.directory %>/<%= post.metadata.image %>" class="card-img-top" alt="<%= post.metadata.title %>">
+                        <img src="/<%= post.$path %>/<%= post.image %>" class="card-img-top" alt="<%= post.title %>">
                         <div class="card-body">
                             <h4 class="card-title">
-                                <%= post.metadata.title %>
+                                <%= post.title %>
                             </h4>
                             <p class="text-muted">
-                                <%= post.metadata.date %>
+                                <%= post.date %>
                             </p>
                             <p class="card-text">
-                                <%= post.metadata.description %>
+                                <%= post.description %>
                             </p>
                         </div>
                         <div class="card-footer bg-transparent border-0">
-                            <a class="card-link" href="/<%= post.directory %>" role="button">Leer el artículo completo
+                            <a class="card-link" href="/<%= post.$path %>" role="button">Leer el artículo completo
                                 &RightArrow;</a>
                         </div>
                     </div>
-                    <% }) %>
+                <% } %>
 
             </div> <!-- row -->
 
@@ -81,25 +86,25 @@
 
             <br>
 
-            <% const estudios = utils.shuffleArray(site.__estudios.children, { copy : true }).slice(0, 3); %>
+            <% const estudios = site.__estudios.$pages.slice(0, 3); %>
 
-                <% estudios.forEach(child=> { %>
+                <% for (const child of estudios) { %>
 
                     <div class="card mb-5 bg-transparent border-0">
                         <div class="row g-0">
                             <div class="col-md-4 text-center">
-                                <img src="/<%= child.directory %>/<%= child.metadata.image %>" class="img-fluid"
-                                    alt="<%= child.metadata.title %>">
+                                <img src="/<%= child.$path %>/<%= child.image %>" class="img-fluid"
+                                    alt="<%= child.title %>">
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h3 class="card-title">
-                                        <%= child.metadata.title %>
+                                        <%= child.title %>
                                     </h3>
                                     <p class="card-text">
-                                        <%= child.metadata.description %>
+                                        <%= child.description %>
                                     </p>
-                                    <a class="btn btn-primary" href="/<%= child.directory %>" role="button">Los quiero
+                                    <a class="btn btn-primary" href="/<%= child.$path %>" role="button">Los quiero
                                         conocer
                                         &RightArrow;</a>
                                 </div>
@@ -107,18 +112,18 @@
                         </div>
                     </div>
 
-                    <% }); %>
+                <% } %>
 
-                        <p class="text-end w-100 mt-5">
-                            <a class="link-primary" href="/estudios">Ver todos los estudios &RightArrow;</a>
-                        </p>
+                <p class="text-end w-100 mt-5">
+                    <a class="link-primary" href="/estudios">Ver todos los estudios &RightArrow;</a>
+                </p>
 
                 <div class="m-5">
                     <h2 class="text-center">Nuestros Productos</h2>
                 </div>
 
                 <% 
-                const productos = utils.shuffleArray(site.__productos.children, {copy: true}).slice(0, 6); 
+                const productos = site.__productos.$pages.slice(0, 6); 
                 %>
 
                 <div class="card-group home-productos-group">
@@ -126,17 +131,17 @@
                     <% for(const producto of productos) { %>
 
                         <div class="card border-0 bg-transparent mb-4">
-                            <img src="/<%= producto.directory %>/<%= producto.metadata.image %>" class="card-img-top" alt="<%= producto.metadata.title %>">
+                            <img src="/<%= producto.$path %>/<%= producto.image %>" class="card-img-top" alt="<%= producto.title %>">
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <%= producto.metadata.title %>
+                                    <%= producto.title %>
                                 </h4>
                                 <p class="card-text">
-                                    <%= producto.metadata.description %>
+                                    <%= producto.description %>
                                 </p>
                             </div>
                             <div class="card-footer bg-transparent border-0">
-                                <a class="btn btn-info" href="/<%= producto.directory %>" role="button">Muéstrame más &RightArrow;</a>
+                                <a class="btn btn-info" href="/<%= producto.$path %>" role="button">Muéstrame más &RightArrow;</a>
                             </div>
                         </div>
 
@@ -153,7 +158,7 @@
 
 
                 <% 
-                const creadores = utils.shuffleArray(site.__creadores.children, {copy: true}).slice(0, 12); 
+                const creadores = site.__creadores.$pages.slice(0, 12); 
                 %>
 
                 <div class="card-group">
@@ -164,19 +169,19 @@
 
                         <div class="card-body">
                     
-                            <img src="/<%= creador.directory %>/<%= creador.metadata.image %>" class="profile-img">
+                            <img src="/<%= creador.$path %>/<%= creador.image %>" class="profile-img">
                         </div>
                         <div class="card-body p-0">
                             <h3>
-                                <a href="/<%= creador.directory %>">
-                                    <%= creador.metadata.title %>
+                                <a href="/<%= creador.$path %>">
+                                    <%= creador.title %>
                                 </a>
                             </h3>
                         </div>
                     
                         <div class="card-body p-0">
                             <div class="text-muted fs-6">
-                                <%= creador.metadata.description %>
+                                <%= creador.description %>
                             </div>
                         </div>
                     </div>

@@ -5,16 +5,16 @@
         <div class="card border-0 bg-transparent">
 
             <div class="text-center">
-                <img src="/<%= page.directory %>/<%= page.metadata.image %>" class="img-fluid rounded-circle m-5 mb-0"
+                <img src="/<%= $page.$path %>/<%= $page.image %>" class="img-fluid rounded-circle m-5 mb-0"
                     style="max-width: 20em;">
             </div>
 
             <div class="card-body">
                 <h1 class="card-title text-center text-primary">
-                    <%= page.metadata.title %>
+                    <%= $page.title %>
                 </h1>
                 <div class="muted-text text-center">
-                    <%= page.metadata.description %>
+                    <%= $page.description %>
                 </div>
             </div>
 
@@ -23,13 +23,13 @@
     </div>
 
     <div class="container mt-4">
-        <%- page.content %>
+        <%- $page.$content %>
     </div>
 
     <div class="container">
         <% 
-            const studios = site.__estudios.children
-                .filter(s => (s.metadata.team ?? []).indexOf(page.name) >= 0);
+            const studios = site.__estudios.$pages
+                .filter(s => (s.team ?? []).indexOf($page.name) >= 0);
         %>
 
         <% if (studios.length > 0) { %>
@@ -43,15 +43,15 @@
             <div class="card mb-5 bg-transparent border-0">
                 <div class="row g-0">
                   <div class="col-md-2 text-center">
-                    <img src="/<%= studio.directory %>/<%= studio.metadata.image %>" 
-                        class="img-fluid" alt="<%= studio.metadata.title %>">
+                    <img src="/<%= studio.$path %>/<%= studio.image %>" 
+                        class="img-fluid" alt="<%= studio.title %>">
                   </div>
                   <div class="col-md-10">
                     <div class="card-body">
-                      <h3 class="card-title"><%= studio.metadata.title %></h3>
-                      <p class="card-text"><%= studio.metadata.description %></p> 
+                      <h3 class="card-title"><%= studio.title %></h3>
+                      <p class="card-text"><%= studio.description %></p> 
                       <p>
-                        <a class="btn btn-primary" href="/<%= studio.directory %>" role="button">Los quiero conocer &RightArrow;</a>
+                        <a class="btn btn-primary" href="/<%= studio.$path %>" role="button">Los quiero conocer &RightArrow;</a>
                       </p>                     
                     </div>
                   </div>
@@ -64,7 +64,7 @@
 
     <div class="container">
         <% 
-            const productos = (page.metadata.products || [])
+            const productos = ($page.products || [])
                 .map(productName => site.__productos["__" + productName]);
         %>
 
@@ -78,12 +78,12 @@
           <% for(const producto of productos) {  %>
               
             <div class="list-group-item d-flex justify-content-left border-0 bg-transparent">
-              <img src="/<%= producto.directory %>/<%= producto.metadata.image %>"
+              <img src="/<%= producto.$path %>/<%= producto.image %>"
               style="width:8em;height: 8em;">
               <div class="ps-4 pt-3">
-                  <h4><%= producto.metadata.title %></h4>
-                  <p class="text-muted fs-6"><%= producto.metadata.description %></p>
-                  <a class="btn btn-info" href="/<%= producto.directory %>">Muéstrame más &RightArrow;</a>
+                  <h4><%= producto.title %></h4>
+                  <p class="text-muted fs-6"><%= producto.description %></p>
+                  <a class="btn btn-info" href="/<%= producto.$path %>">Muéstrame más &RightArrow;</a>
               </div>
             </div>
 

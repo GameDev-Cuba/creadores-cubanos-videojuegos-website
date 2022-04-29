@@ -1,29 +1,28 @@
 {
-  "name": "demo-site",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node bin/index.js",
-    "tsc": "tsc --watch -p src",
-    "www": "http-server www -p 8000 -c-1"
-  },
-  "keywords": [],
-  "author": "Arian Fornaris <developers@phasereditor2d.com> (https://phasereditor2d.com/)",
-  "license": "ISC",
-  "dependencies": {
-    "ejs": "^3.1.6",
-    "showdown": "^1.9.1",
-    "shuffle-array": "^1.0.1",
-    "yaml": "2.0.0-8"
-  },
-  "devDependencies": {
-    "@types/ejs": "^3.1.0",
-    "@types/node": "^16.11.1",
-    "@types/showdown": "^1.9.4",
-    "@types/shuffle-array": "^1.0.2",
-    "http-server": "^14.0.0",
-    "typescript": "^4.4.4"
-  }
+	"name": "demo-site",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "node index.js",
+		"server": "http-server www -p 8000 -c-1",
+		"watch": "nodemon index.js --watch themes --watch content  -e js,ejs,png,jpg,md,css"
+	},
+	"keywords": [],
+	"author": "Arian Fornaris <arian@phasereditor2d.com>",
+	"license": "ISC",
+	"dependencies": {
+		"ejs": "^3.1.6",
+		"shuffle-array": "^1.0.1"
+	},
+	"devDependencies": {
+		"@types/ejs": "^3.1.0",
+		"@types/node": "^16.11.1",
+		"@types/shuffle-array": "^1.0.2",
+		"http-server": "^14.0.0",
+		"nodemon": "^2.0.15",
+		"staticojs": "^1.0.5"
+	}
 }
