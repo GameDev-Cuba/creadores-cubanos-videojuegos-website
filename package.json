@@ -7,7 +7,8 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "node index.js",
-		"server": "http-server www -p 8000 -c-1"
+		"server": "http-server www -p 8000 -c-1",
+		"watch": "nodemon index.js --watch themes --watch content  -e js,ejs,png,jpg,md,css"
 	},
 	"keywords": [],
 	"author": "Arian Fornaris <arian@phasereditor2d.com>",
@@ -21,6 +22,7 @@
 		"@types/node": "^16.11.1",
 		"@types/shuffle-array": "^1.0.2",
 		"http-server": "^14.0.0",
+		"nodemon": "^2.0.15",
 		"staticojs": "^1.0.5"
 	}
 }
