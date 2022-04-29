@@ -8,14 +8,15 @@ favicon: assets/logo.png
 call_to_action:
     label: Conoce nuestros estudios de videojuegos
     url: /estudios
-
+repository: https://github.com/GameDev-Cuba/creadores-cubanos-videojuegos-website
 social_accounts:
-    - name: Twitter @CreadoresCubanosVideojuegos
-      url: https://www.twitter.com/CreadoresCubanosVideojuegos
+    - name: Telegram (Creadores cubanos de videojuegos. 🇨🇺🎮)
+      url: https://telegram.org
     - name: Facebook @CreadoresCubanosVideojuegos
-      url: https://www.facebook.com/CreadoresCubanosVideojuegos
+      url: https://www.facebook.com/Asociación-Cubana-de-Videojuegos-100340248122912
     - name: GitHub @GameDev-Cuba
       url: https://github.com/GameDev-Cuba
+contribute_message: ¡Quiero ser parte!
 featured_messages:
     - title: Nosotros
       body:
