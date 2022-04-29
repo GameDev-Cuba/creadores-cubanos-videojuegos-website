@@ -20,11 +20,11 @@
                 <%- $page.$content %>
             </div>
             <div class="col-md-4">
-                <% const studios=site.__estudios.$pages .filter(s=> (s.products ?? []).indexOf($page.name) >=
+                <% const studios=site.__estudios.$pages .filter(s=> (s.products ?? []).indexOf($page.$name) >=
                     0);
 
                     const creadores = site.__creadores.$pages
-                    .filter(creador => (creador.products || []).indexOf($page.name) >= 0);
+                    .filter(creador => (creador.products || []).indexOf($page.$name) >= 0);
                     %>
 
                     <% if (studios.length + creadores.length> 0) { %>

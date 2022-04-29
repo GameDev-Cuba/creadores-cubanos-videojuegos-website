@@ -29,7 +29,7 @@
     <div class="container">
         <% 
             const studios = site.__estudios.$pages
-                .filter(s => (s.team ?? []).indexOf($page.name) >= 0);
+                .filter(s => (s.team ?? []).indexOf($page.$name) >= 0);
         %>
 
         <% if (studios.length > 0) { %>
