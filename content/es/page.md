@@ -19,8 +19,8 @@ social_accounts:
 featured_messages:
     - title: Nosotros
       body:
-        Libero enim sed faucibus turpis. Adipiscing commodo elit at imperdiet dui accumsan. Odio aenean sed adipiscing diam. Amet justo donec enim diam vulputate ut pharetra. Vulputate sapien nec sagittis aliquam malesuada bibendum.
+        Somos la comunidad de creadores de videojuegos de Cuba. Agrupamos a los programadores, artistas, diseñadores, comunicadores y demás roles involucrados en la industria de los videojuegos.
     - title: Objetivos
       body:
-        Nullam non nisi est sit amet facilisis magna etiam tempor. Magna eget est lorem ipsum dolor sit. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat pretium
+        Dar a conocer a nuestros miembros y sus creaciones dentro y fuera de Cuba. Representar a la comunidad y generar estrategias que permitan desarrollarnos como industria.
 ---
