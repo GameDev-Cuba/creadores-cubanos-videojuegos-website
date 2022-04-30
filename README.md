@@ -24,7 +24,7 @@ Para instalarte el sitio en tu PC, debes seguir estos pasos:
 5. En este punto, el generador crea la carpeta `www`, que es donde reside el sitio. Para verlo local, puedes ejecutar un servidor web:
 
     ```
-    npm run www
+    npm run server
     ```
 
     Y abres el navegador en [http://localhost:8000](http://localhost:8000).
