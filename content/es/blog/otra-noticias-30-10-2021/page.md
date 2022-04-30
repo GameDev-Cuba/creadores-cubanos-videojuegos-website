@@ -1,6 +1,6 @@
 ---
 title: Otra noticia sobre el pachamama
-date: 30/10/2021
+date: 30-10-2021
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
 image: assets/pachamama_game_jam-2015-03-20_08-36-25.webp
 ---
