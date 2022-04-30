@@ -2,6 +2,7 @@
 title: Phaser Editor 2D
 description: Entorno para la creación de juegos HTML5.
 image: assets/phaser-editor-2d.png
+tags: ["herramienta"]
 ---
 
 Phaser Editor 2D es un IDE para la creación de juegos basados en el popular framework [Phaser](https://phaser.io).

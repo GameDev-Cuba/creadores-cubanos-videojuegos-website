@@ -2,6 +2,7 @@
 title: Shotguin
 description: Shotguin is a small sides-croller roguelike where you are a penguin.
 image: assets/shotguin-4.jpg
+tags: ["juego"]
 ---
 
 Shotguin is a small sides-croller roguelike where you are a penguin and while you swim through the pollution garbage you find a shotgun and with it you will start cleaning the ocean.
