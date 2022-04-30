@@ -9,6 +9,12 @@ call_to_action:
     label: Conoce nuestros estudios de videojuegos
     url: /estudios
 repository: https://github.com/GameDev-Cuba/creadores-cubanos-videojuegos-website
+menu_pages:
+    - estudios
+    - creadores
+    - productos
+    - blog
+    - sobre
 social_accounts:
     - name: Telegram (Creadores cubanos de videojuegos. 🇨🇺🎮)
       url: https://telegram.org

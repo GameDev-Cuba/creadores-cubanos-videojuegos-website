@@ -2,6 +2,7 @@
 title: Dungeons and Honor
 description: Dungeons and Honor is a real-time strategy RPG where you control a guild of heroes and are in charge of their progress.
 image: assets/dungeon-and-honor.png
+tags: ["juego"]
 ---
 
 Dungeons and Honor is a real-time strategy RPG where you control a guild of heroes and are in charge of their progress. Fight against many monsters and epic bosses to collect equipment and new abilities, both alone and with friends. 

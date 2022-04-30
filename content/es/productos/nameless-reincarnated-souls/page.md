@@ -2,6 +2,7 @@
 title: Reincarnated souls
 description: It is a video game that mixes the twin-stick shooter genre's action with the adventure and progress present in the RPG genre.
 image: assets/reincarnated-souls.png
+tags: ["juego"]
 ---
 
 Reincarnated Souls is a top-down action shooter with RPG elements. Fight against deadly enemies and bosses who will have no mercy on your soul. If the road is challenging, you can count on your friends' help in local network co-op.
