@@ -1,6 +1,6 @@
 ---
 title: Hola mundo
-date: 3/9/2021
+date: 3-9-2000
 description: Ullamcorper eget nulla facilisi etiam dignissim. Dolor magna eget est lorem ipsum dolor. Quisque non tellus orci ac auctor augue mauris augue neque.
 image: assets/cujae-ggj-cuba.jpeg
 ---

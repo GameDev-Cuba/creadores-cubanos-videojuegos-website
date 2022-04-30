@@ -1,3 +1,4 @@
+import { parse } from "date-format-parse";
 import { exit } from "process";
 import shuffleArray from "shuffle-array";
 import { SiteBuilder } from "staticojs";
@@ -29,6 +30,18 @@ const products = page.$pages.find(p => p.$name === "productos").$pages;
 shuffleArray(products);
 
 page.homepage_productos = products.slice(0, 4);
+
+// sort blog posts
+
+const posts = page.$pages.find(p => p.$name === "blog").$pages;
+
+posts.sort((a, b) => {
+
+    const date1 = parse(a.date, "D-M-YYYY");
+    const date2 = parse(b.date, "D-M-YYYY");
+    
+    return date2.getTime() - date1.getTime();
+});
 
 // compile
 
