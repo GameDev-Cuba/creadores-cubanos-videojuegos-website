@@ -86,9 +86,7 @@
 
             <br>
 
-            <% const estudios = site.__estudios.$pages.slice(0, 3); %>
-
-                <% for (const child of estudios) { %>
+                <% for (const child of site.homepage_estudios) { %>
 
                     <div class="card mb-5 bg-transparent border-0">
                         <div class="row g-0">
@@ -122,13 +120,9 @@
                     <h2 class="text-center">Nuestros Productos</h2>
                 </div>
 
-                <% 
-                const productos = site.__productos.$pages.slice(0, 6); 
-                %>
-
                 <div class="card-group home-productos-group">
 
-                    <% for(const producto of productos) { %>
+                    <% for(const producto of site.homepage_productos) { %>
 
                         <div class="card border-0 bg-transparent mb-4">
                             <img src="/<%= producto.$path %>/<%= producto.image %>" class="card-img-top" alt="<%= producto.title %>">
@@ -156,14 +150,9 @@
                     <h2 class="text-center">Nuestros Creadores de Videojuegos</h2>
                 </div>
 
-
-                <% 
-                const creadores = site.__creadores.$pages.slice(0, 4); 
-                %>
-
                 <div class="card-group">
 
-                <% for (const creador of creadores) { %>
+                <% for (const creador of site.homepage_creadores) { %>
 
                     <div class="card border-0 bg-transparent d-flex text-center" style="min-width:12rem;">
 
