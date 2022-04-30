@@ -45,13 +45,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     
-                    <% for(const child of site.$pages) { %>
+                    <% for(const pageName of site.menu_pages) { 
+                        const menuPage = site.$pages.find(p => p.$name === pageName);
+                    %>
                         <li class="nav-item">
-                            <a class="nav-link text-primary" aria-current="page" href="/<%= child.$path %>">
-                                <%= child.title %>
+                            <a class="nav-link text-primary" aria-current="page" href="/<%= menuPage.$path %>">
+                                <%= menuPage.title %>
                             </a>
                         </li>
                     <% } %>
+
                 </ul>
             </div>
         </div>
