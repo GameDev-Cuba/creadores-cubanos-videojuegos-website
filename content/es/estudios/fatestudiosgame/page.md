@@ -4,8 +4,12 @@ description: Un pequeño estudio que intenta aportar su granito de arena en este
 image: assets/logo-fate-blanco.jpg
 team:
     - carlos-anaya
+    - noa-llorens
+    - adrian-denis
 products:
     - fatestudiosgame-la-belleza-del-caos
+    - fatestudiosgame-youtube-channel-fatestudiosgame
+    - fatestudiosgame-el-cantinero-del-rock
    
 ---
 
