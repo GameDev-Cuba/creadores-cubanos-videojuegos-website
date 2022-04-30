@@ -4,17 +4,13 @@
 
         <div class="container">
 
-            <div class="d-flex justify-content-center mb-4">
-                <% for(const tag of $page.tags) { %>
-                    <a class="ms-2 text-uppercase" href="/tags/productos/<%= tag %>">
-                        #<%= tag %>
-                    </a>
-                <% } %>
-            </div>
-
+            <p>
+                <a href="/productos">&leftarrow; Regresar</a>
+            </p>
+            
             <div class="card-group">
 
-                <% for(const producto of $page.$pages) { %>
+                <% for(const producto of $page.productos) { %>
 
                     <div class="studio-card card m-2 mb-5 border-0 bg-transparent">
                         <img src="/<%= producto.$path %>/<%= producto.image %>" class="img-fluid">
@@ -25,7 +21,8 @@
                         <div class="card-footer bg-transparent border-0">
                             <a href="/<%= producto.$path %>" class="btn btn-info">Muéstrame más &RightArrow;</a>
                         </div>
-                      </div>                    
+                      </div>  
+
                 <% } %>
             
             </div> <!-- group -->

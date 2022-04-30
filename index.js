@@ -18,7 +18,29 @@ builder.compile();
 
 function buildProductsTags() {
 
-    const productos = site.$pages.find(p => p.$name === "productos");
+    const productosPage = findChildByName(site, "productos");
+    const productos = productosPage.$pages;
+
+    const tagsPage = findChildByName(site, "tags");
+    const productosTagsPage = findChildByName(tagsPage, "productos");
+    const tags = productosTagsPage.featured_tags;
+
+    productosPage.tags = tags;
+
+    for (const tag of tags) {
+
+        const newPage = {
+            $name: tag,
+            $path: productosTagsPage.$path + "/" + tag,
+            $content: "",
+            $summary: "",
+            $src: "---\ntitle: tags\ndescription: tags\n---",
+            $pages: [],
+            productos: productos.filter(p => p.tags.indexOf(tag) >= 0)
+        };
+
+        productosTagsPage.$pages.push(newPage);
+    }
 }
 
 function sortBlogPosts() {
