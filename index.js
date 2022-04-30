@@ -36,7 +36,8 @@ function buildProductsTags() {
             $summary: "",
             $src: "---\ntitle: tags\ndescription: tags\n---",
             $pages: [],
-            productos: productos.filter(p => p.tags.indexOf(tag) >= 0)
+            title: tag.toUpperCase(),
+            productos_names: productos.filter(p => p.tags.indexOf(tag) >= 0).map(p => p.$name)
         };
 
         productosTagsPage.$pages.push(newPage);

@@ -7,10 +7,13 @@
             <p>
                 <a href="/productos">&leftarrow; Regresar</a>
             </p>
-            
+
             <div class="card-group">
 
-                <% for(const producto of $page.productos) { %>
+                <% for(const productoName of $page.productos_names) { 
+                    
+                    const producto = site.__productos["__" + productoName];
+                    %>
 
                     <div class="studio-card card m-2 mb-5 border-0 bg-transparent">
                         <img src="/<%= producto.$path %>/<%= producto.image %>" class="img-fluid">
