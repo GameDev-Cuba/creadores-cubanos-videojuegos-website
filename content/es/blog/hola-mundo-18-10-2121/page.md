@@ -1,10 +1,20 @@
 ---
-title: Hola mundo
-date: 3-9-2000
-description: Ullamcorper eget nulla facilisi etiam dignissim. Dolor magna eget est lorem ipsum dolor. Quisque non tellus orci ac auctor augue mauris augue neque.
+title: Bienvenidos.
+date: 1-4-2022
+description: ¡Hola Cuba!
 image: assets/cujae-ggj-cuba.jpeg
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus vitae aliquet nec ullamcorper. Orci sagittis eu volutpat odio facilisis mauris sit amet. Amet consectetur adipiscing elit ut aliquam purus sit amet luctus. Cursus in hac habitasse platea dictumst quisque sagittis purus. Habitant morbi tristique senectus et netus et. Tincidunt id aliquet risus feugiat. Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Ullamcorper eget nulla facilisi etiam dignissim. Dolor magna eget est lorem ipsum dolor. Quisque non tellus orci ac auctor augue mauris augue neque.
+¡Hola! Este es nuestro primer post en el blog de la comunidad de creadores de videojuegos de Cuba.
 
-Eget egestas purus viverra accumsan in nisl nisi. Tristique magna sit amet purus gravida quis blandit turpis. Velit ut tortor pretium viverra suspendisse. Et magnis dis parturient montes. Risus feugiat in ante metus dictum at tempor commodo ullamcorper. Id ornare arcu odio ut. Tincidunt arcu non sodales neque sodales ut. Tellus cras adipiscing enim eu. Aenean sed adipiscing diam donec adipiscing tristique risus. Elementum nisi quis eleifend quam adipiscing. Quis blandit turpis cursus in hac habitasse platea dictumst. Venenatis lectus magna fringilla urna porttitor rhoncus dolor.
+Con esta plataforma pretendemos brindar información sobre nuestra comunidad. Por lo pronto, estamos formando un catálogo de nuestros creadores, estudios y resultados.
+
+Los que estamos desarrollando este sitio, somos algunos integrantes de la comunidad cubana que provenimos tanto de las instituciones cubanas como del sector privado. Aún nos queda mucho por definir, pero estamos dando los primeros pasos.
+
+Todos son bienvenidos a ser parte de esta plataforma y contribuir a la misma. Toda la información está alojada en [este repositorio en GitHub](http://github.com/GameDev-Cuba/creadores-cubanos-videojuegos-website), al cual puedes contribiur y asi crecer como comunidad.
+
+¡Saludos!
+
+(Foto: Global Game Jam 2020, sede CUJAE)
+
+
