@@ -1,6 +1,6 @@
 ## Cómo registrar un creador
 
-Primero que todo, debes clonarte el repositorio y crear una rama nueva. O puedes hacer un fork del repositorio.
+Primero que todo, debes hacer un fork del repositorio.
 
 Si no tienes los conocimientos suficientes, puedes pedir ayuda a cualquiera de los administradores de la plataforma.
 
@@ -20,6 +20,8 @@ image: assets/mi-foto-perfil.jpg
 products:
     - la-rana-corredora
     - libro-godot-en-cubano
+tags:
+    - artista
 ---
 
 Soy diseñador de profesión.
@@ -37,7 +39,13 @@ Puedes contactar conmigo en:
 * [Facebook @JuanPerezPu](https://www.facebook.com/JuanPerezPu)
 ```
 
-Es probable que Markdown te sea familiar. Las primeras líneas contienen los metadatos del creador (`title`, `description`, `image` y `products`). El valor de `image` es relativo a la carpeta. Las imágenes deben ubicarse siempre en la carpeta `assets/`.
+Es probable que Markdown te sea familiar. Las primeras líneas contienen los metadatos del creador (`title`, `description`, `image`, `products`, `tags`). El valor de `image` es relativo a la carpeta. Las imágenes deben ubicarse siempre en la carpeta `assets/`. Los tags son fijos y los debes escribir en minúscula. Estos son los tags permitidos:
+
+- programador
+- artista
+- lider
+- comunicador
+- otro
 
 Los valores `la-rana-corredora` y `libro-godot-en-cuba`, son los nombres de las carpetas relativas a los productos (previamente registrados) *La rana corredora* y *Godot en cubano*.
 

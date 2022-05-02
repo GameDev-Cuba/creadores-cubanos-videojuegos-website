@@ -2,19 +2,14 @@
 
     <%- include("_page") %>
 
-    <div class="d-flex justify-content-center mb-4">
-        <% for(const tag of $page.tags) { %>
-            <a class="ms-2 text-uppercase" href="/tags/creadores/<%= tag %>">
-                #<%= tag %>
-            </a>
-        <% } %>
-    </div>
-
         <div class="container">
 
             <div class="row">
 
-                <% $page.$pages.forEach(child=> { %>
+                <% for(const creadoreName of $page.creadores_names) { 
+                    
+                    const child = site.__creadores["__" + creadoreName];
+                    %>
 
                     <div class="card border-0 bg-transparent d-flex text-center" style="width:20em;">
 
@@ -37,7 +32,7 @@
                         </div>
                     </div>
 
-            <% }); %>
+            <% } %>
             </div> <!-- row -->
         </div>
 
