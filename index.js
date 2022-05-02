@@ -12,9 +12,40 @@ sortBlogPosts();
 
 buildProductsTags();
 
+buildItemsTags("creadores");
+
 builder.compile();
 
 // ---- utils ----
+
+function buildItemsTags(itemsPageName) {
+
+    const itemsPage = findChildByName(site, itemsPageName);
+    const children = itemsPage.$pages;
+
+    const tagsPage = findChildByName(site, "tags");
+    const itemsTagsPage = findChildByName(tagsPage, itemsPageName);
+    const tags = itemsTagsPage.featured_tags;
+
+    itemsPage.tags = tags;
+
+    for (const tag of tags) {
+
+        const newPage = {
+            $name: tag,
+            $path: itemsTagsPage.$path + "/" + tag,
+            $content: "",
+            $summary: "",
+            $src: "---\ntitle: tags\ndescription: tags\n---",
+            $pages: [],
+            title: tag.toUpperCase(),
+        };
+
+        newPage[itemsPageName + "_names"] = children.filter(p => p.tags.indexOf(tag) >= 0).map(p => p.$name);
+
+        itemsTagsPage.$pages.push(newPage);
+    }
+}
 
 function buildProductsTags() {
 

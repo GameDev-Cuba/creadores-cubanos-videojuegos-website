@@ -4,6 +4,8 @@ description: Desarrollador de videojuegos y autor de Phaser Editor 2D
 image: assets/profile.jpg
 products:
     - arian-phaser-editor-2d
+tags:
+    - programador
 ---
 
 Autor de [Phaser Editor 2D](https://phasereditor2d.com), un IDE para crear juegos HTML5. 

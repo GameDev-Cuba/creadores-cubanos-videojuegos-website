@@ -7,6 +7,8 @@ featured_tags:
     - herramienta
     - blog
     - audiovisual
+    - arte
+    - otro
 ---
 
 Tags

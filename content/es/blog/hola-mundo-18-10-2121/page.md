@@ -1,7 +1,7 @@
 ---
 title: Bienvenidos.
 date: 1-4-2022
-description: ¡Hola Cuba!
+description: ¡Hola! Este es nuestro primer post en el blog de la comunidad de creadores de videojuegos de Cuba.
 image: assets/cujae-ggj-cuba.jpeg
 ---
 
