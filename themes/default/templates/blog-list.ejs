@@ -21,6 +21,9 @@
                         <div class="col-md-8">
                         <div class="card-body">
                             <h3 class="card-title"><%= post.title %></h3>
+                            <p class="text-muted">
+                                <%- include("_date", {date: post.date})%>
+                            </p>
                             <p class="card-text"><%= post.description %></p> 
                             <p>
                             <a class="card-link" href="/<%= post.$path %>" role="button">Leer el artítculo completo &RightArrow;</a>

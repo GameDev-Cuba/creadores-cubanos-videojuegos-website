@@ -1,0 +1,8 @@
+<% 
+
+const split = date.split("-");
+const day = split[0];
+const month = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "noviembre", "diciembre"]
+    [Number.parseInt(split[1])];
+const year = split[2];
+%><%= day %> de <%= month %>, <%= year %>

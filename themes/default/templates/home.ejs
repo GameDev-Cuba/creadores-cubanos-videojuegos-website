@@ -59,7 +59,7 @@
                                 <%= post.title %>
                             </h4>
                             <p class="text-muted">
-                                <%= post.date %>
+                                <%- include("_date", {date: post.date})%>
                             </p>
                             <p class="card-text">
                                 <%= post.description %>
