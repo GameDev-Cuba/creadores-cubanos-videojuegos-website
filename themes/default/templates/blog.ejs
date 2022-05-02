@@ -19,7 +19,9 @@
 
         <%- $page.$content %>
 
-        <p class="text-muted"><%= $page.date %></p>
+        <p class="text-muted">
+            <%- include("_date", {date: $page.date})%>
+        </p>
 
     </div>
 
