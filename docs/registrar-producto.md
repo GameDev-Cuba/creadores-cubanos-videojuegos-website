@@ -17,6 +17,8 @@ El fichero `index.md` tendría un formato (Markdown) como este:
 title: El Avioncito Rojo
 description: Juego retro donde intentas pilotear una aereonave minúscula.
 image: assets/el-avioncito-rojo-logo.jpg
+tags:
+    - juego
 ---
 
 Este es un juego sencillo y divertido. Solo juégalo ahora mismo.
@@ -28,7 +30,15 @@ Te lo puedes descargar en Apklis:
 Déjanos tu opinión en los comentarios de Apklis.
 ```
 
-Es probable que Markdown te sea familiar. Las primeras líneas contienen los metadatos del creador (`title`, `description`, `image` y `products`). El valor de `image` es relativo a la carpeta. Las imágenes deben ubicarse siempre en la carpeta `assets/`.
+Es probable que Markdown te sea familiar. Las primeras líneas contienen los metadatos del creador (`title`, `description`, `image` y `products`). El valor de `image` es relativo a la carpeta. Las imágenes deben ubicarse siempre en la carpeta `assets/`. Los tags son fijos y los debes escribir en minúscula. Estos son los tags permitidos:
+
+- juego
+- portal
+- herramienta
+- blog
+- audiovisual
+- arte
+- otro
 
 El juego puede estar en fase de desarrollo o ser ya un producto terminado.
 
