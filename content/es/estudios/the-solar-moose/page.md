@@ -1,6 +1,6 @@
 ---
 title: The Solar Moose
-image: assets/logo.png
+image: assets/banner.png
 description: The Solar Moose es un estudio de videojuegos independiente fundado a finales de 2020.
 team:
     - miguel-nicolas
