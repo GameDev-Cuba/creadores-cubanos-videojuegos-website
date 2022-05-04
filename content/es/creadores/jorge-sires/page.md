@@ -1,9 +1,9 @@
 ---
 title: Jorge Sires
-description: Nameless Studio - Fundador - Programador
+description: Desarrollador independiente de videojuegos.
 image: assets/sires.png
 tags:
     - programador
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+Creador de Dungeons and Honor y Reincarnated souls. Director y desarrollador de Coliseum.
