@@ -10,3 +10,4 @@ Un proyecto del que todos pueden ser parte si cumplen un solo requisito: amar lo
 Puedes visitarlo a través del siguiente enlace:
 [Visitar el canal de youtube de fatestudiosgame](https://www.youtube.com/c/fatestudiosgame)
 Déjanos tu opinión en los comentarios de cada video!!
+¿No tienes muchos datos? No hay problema!! Todo el contenido del canal se resube a PICTA en par de días donde puedes verlo consumiendo megas nacionales [Visitar el canal de picta de fatestudiosgame](https://www.picta.cu/canal/fatestudiosgame)
