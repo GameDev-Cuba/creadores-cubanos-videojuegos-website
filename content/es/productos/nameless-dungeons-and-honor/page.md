@@ -30,3 +30,7 @@ Key features:
 - Excellent controls and responses.
 
 - Variety of weapons and equipment.
+
+[Trailer](https://youtu.be/IiRQLgI1-A0)
+
+[More](https://www.sires-studio.com/video-games/dungeons-and-honor)

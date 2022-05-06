@@ -12,5 +12,5 @@ Ingeniero Biomédico de profesión.
 
 Puedes contactar conmigo en:
 
-* [Twitter @eljovennoble](https://twitter.com/LlorensNoa)
+* [Twitter @llorensnoa](https://twitter.com/LlorensNoa)
 
