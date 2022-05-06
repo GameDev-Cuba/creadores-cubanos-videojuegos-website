@@ -8,7 +8,7 @@
 
             <div class="card-group">
 
-                <% $page.$pages.forEach(child=> { %>
+                <% for(const child of $page.$pages) { %>
 
                     <div class="studio-card card m-2 mb-5 border-0 bg-transparent">
                         <img src="/<%= child.$path %>/<%= child.image %>" class="img-fluid">
@@ -20,7 +20,7 @@
                             <a href="/<%= child.$path %>" class="btn btn-primary">Los quiero conocer &RightArrow;</a>
                         </div>
                       </div>                    
-                <% }); %>
+                <% } %>
             
             </div> <!-- group -->
 

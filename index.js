@@ -10,8 +10,7 @@ randomHomeContent();
 
 sortBlogPosts();
 
-buildProductsTags();
-
+buildItemsTags("productos");
 buildItemsTags("creadores");
 
 builder.compile();
@@ -44,34 +43,6 @@ function buildItemsTags(itemsPageName) {
         newPage[itemsPageName + "_names"] = children.filter(p => p.tags.indexOf(tag) >= 0).map(p => p.$name);
 
         itemsTagsPage.$pages.push(newPage);
-    }
-}
-
-function buildProductsTags() {
-
-    const productosPage = findChildByName(site, "productos");
-    const productos = productosPage.$pages;
-
-    const tagsPage = findChildByName(site, "tags");
-    const productosTagsPage = findChildByName(tagsPage, "productos");
-    const tags = productosTagsPage.featured_tags;
-
-    productosPage.tags = tags;
-
-    for (const tag of tags) {
-
-        const newPage = {
-            $name: tag,
-            $path: productosTagsPage.$path + "/" + tag,
-            $content: "",
-            $summary: "",
-            $src: "---\ntitle: tags\ndescription: tags\n---",
-            $pages: [],
-            title: tag.toUpperCase(),
-            productos_names: productos.filter(p => p.tags.indexOf(tag) >= 0).map(p => p.$name)
-        };
-
-        productosTagsPage.$pages.push(newPage);
     }
 }
 
