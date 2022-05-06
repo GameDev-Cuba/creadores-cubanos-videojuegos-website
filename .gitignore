@@ -2,3 +2,4 @@ node_modules
 www
 whatch.sh
 .vscode
+.DS_Store
