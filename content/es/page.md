@@ -13,6 +13,7 @@ menu_pages:
     - estudios
     - creadores
     - productos
+    - jams
     - blog
     - sobre
 social_accounts:
