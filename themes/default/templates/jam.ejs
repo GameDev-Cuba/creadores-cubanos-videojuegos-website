@@ -1,0 +1,27 @@
+<%- include("_header") %>
+
+<div class="container-fluid p-5 mb-5 text-light main-header-img" style="background-image: url(/<%= site.banner_image %>);">
+
+    <div class="mb-4">
+        <div class="container">
+            <h1 class="display-5 fw-bold text-light text-center">
+                <%= $page.title %>
+            </h1>
+            <p class="fs-5 text-white text-center">
+                <%= $page.description %>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-2 page-content">
+
+    <p>
+        <img class="img-fluid" src="<%= $page.image %>">
+    </p>
+
+    <%- $page.$content %>
+    
+</div>
+
+<%- include("_footer") %>
