@@ -1,6 +1,6 @@
 <%- include("_header") %>
 
-    <div class="container mt-5 text-center">
+    <div class="container mt-5 mb-5 text-center">
 
         <h1 class="card-title text-primary">
             <%= $page.title %>
@@ -18,16 +18,21 @@
             <%= $page.description %>
         </p>
 
-        <img src="/<%= $page.$path %>/<%= $page.image %>" class="img-fluid mt-5 mb-0">
+        <img src="/<%= $page.$path %>/<%= $page.image %>" class="img-fluid">
 
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 page-content mt-4">
-                <%- $page.$content %>
+            <div class="col-md-12 col-lg-6">
+                
+                <span class="page-content">
+
+                    <%- $page.$content %>
+
+                </span>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-12 col-lg-6">
                 <% const studios=site.__estudios.$pages .filter(s=> (s.products ?? []).indexOf($page.$name) >=
                     0);
 
@@ -35,9 +40,10 @@
                     .filter(creador => (creador.products || []).indexOf($page.$name) >= 0);
                     %>
 
-                    <% if (studios.length + creadores.length> 0) { %>
-                        <div class="mt-5 mb-5">
-                            <h3>Desarrolladores</h3>
+                    <% if (studios.length + creadores.length > 0) { %>
+                        <div class="text-primary mb-5">
+                            <h3 class="text-primary">Desarrolladores</h3>
+                            <hr>
                         </div>
                         <% } %>
 
