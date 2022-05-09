@@ -32,9 +32,8 @@
     height: 20em;
 }
 
-.studio-main-card img {
-    object-fit: cover;
-    height: 30em;
+.studio-image {
+    max-height: 30em;
 }
 
 .studio-main-card .card-body img {
