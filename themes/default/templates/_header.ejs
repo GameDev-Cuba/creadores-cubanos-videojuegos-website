@@ -10,7 +10,7 @@
     <% const title=site===$page? site.title : ($page.title + " | " + site.title) %>
         <meta name="og:title" content="<%= title %>">
         <meta name="og:description" content="<%= $page.description %>">
-        <meta name="og:image" content="/<%= $page.image? ($page.$path + " /" + $page.image) : site.banner_image %>">
+        <meta name="og:image" content="/<%= $page.image? ($page.$path + "/" + $page.image) : site.banner_image %>">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@GameDevCuba">
         <meta name="twitter:creator" content="@GameDevCuba">
