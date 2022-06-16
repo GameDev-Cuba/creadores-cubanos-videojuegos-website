@@ -1,6 +1,6 @@
 ---
 title: Versus Windmill
-image: assets/battlegear-logo.jpeg
+image: assets/logo-splash.jpg
 description: Un estudio de juegos fundado en Santiago de Cuba.
 team:
     - roger-duranona
