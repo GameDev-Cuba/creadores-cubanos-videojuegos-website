@@ -4,6 +4,7 @@ image: assets/logo-splash.jpg
 description: Un estudio de juegos fundado en Santiago de Cuba.
 team:
     - roger-duranona
+    - daniel-hermoso
 products:
     - vswindmills-battlegear
     - vswinmills-laberinto
