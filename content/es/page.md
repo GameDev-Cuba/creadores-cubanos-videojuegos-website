@@ -14,6 +14,7 @@ menu_pages:
     - creadores
     - productos
     - jams
+    - eventos
     - blog
     - sobre
 social_accounts:
