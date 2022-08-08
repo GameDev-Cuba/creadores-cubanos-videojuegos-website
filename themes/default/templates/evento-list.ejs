@@ -1,0 +1,36 @@
+
+<%- include("_header") %>
+
+<%- include("_page") %>
+
+    <div class="container mt-5 pt-5">
+
+        <% 
+        
+        const jams = $page.$pages;
+        
+        for(const jam of jams) { %>
+
+            <div class="card mb-5 bg-transparent border-0">
+                <div class="row g-0">
+                    <div class="col-md-4 text-center">
+                    <img src="/<%= jam.$path %>/<%= jam.image %>" 
+                        class="img-fluid" alt="<%= jam.title %>">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title"><%= jam.title %></h3>
+                        <p class="card-text"><%= jam.description %></p> 
+                        <p>
+                        <a class="card-link" href="/<%= jam.$path %>" role="button">Muéstrame más &RightArrow;</a>
+                        </p>                     
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+        <% } %>
+
+    </div>
+
+    <%- include("_footer") %>

@@ -5,26 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- open-graph card -->
-    <% const title = site === $page? site.title : ($page.title + " | " + site.title) %>
-    <meta name="og:title" content="<%= title %>">
-    <meta name="og:description" content="<%= $page.description %>">
-    <meta name="og:image" content="/<%= $page.image? ($page.$path + "/" + $page.image) : site.banner_image %>">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@GameDevCuba">
-    <meta name="twitter:creator" content="@GameDevCuba">
+    <% const title=site===$page? site.title : ($page.title + " | " + site.title) %>
+        <meta name="og:title" content="<%= title %>">
+        <meta name="og:description" content="<%= $page.description %>">
+        <meta name="og:image" content="/<%= $page.image? ($page.$path + "/" + $page.image) : site.banner_image %>">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@GameDevCuba">
+        <meta name="twitter:creator" content="@GameDevCuba">
 
-    <!-- website-->
-    <title><%= title %> </title>
-    <link rel="icon" type="image/x-icon" href="/_static/<%= site.favicon %>">
+        <!-- website-->
+        <title>
+            <%= title %>
+        </title>
+        <link rel="icon" type="image/x-icon" href="/_static/<%= site.favicon %>">
 
 
-    <link rel="stylesheet" href="/_static/bootstrap/simplex/bootstrap.min.css">
-    <link rel="stylesheet" href="/_static/css/custom.css">
-    <link rel="stylesheet" href="/_static/fontawesome/css/all.min.css">
-    <script src="/_static/js/jquery.min.js"></script>
-    <script src="/_static/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="/_static/bootstrap/simplex/bootstrap.min.css">
+        <link rel="stylesheet" href="/_static/css/custom.css">
+        <link rel="stylesheet" href="/_static/fontawesome/css/all.min.css">
+        <script src="/_static/js/jquery.min.js"></script>
+        <script src="/_static/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -32,10 +34,11 @@
     <nav class="navbar navbar-expand-lg border-0 navbar-light text-primary">
         <div class="container-fluid">
             <a class="navbar-brand text-primary" href="/">
-                <img src="<%= site.$path %>/<%= site.logo_image %>" alt="" height="30" class="d-inline-block align-text-top">
+                <img src="<%= site.$path %>/<%= site.logo_image %>" alt="" height="30"
+                    class="d-inline-block align-text-top">
                 <%= site.short_title %>
-              </a>
-            
+            </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -44,19 +47,18 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    
-                    <% for(const pageName of site.menu_pages) { 
-                        const menuPage = site.$pages.find(p => p.$name === pageName);
-                    %>
+
+                    <% for(const pageName of site.menu_pages) { const menuPage=site.$pages.find(p=> p.$name ===
+                        pageName);
+                        %>
                         <li class="nav-item">
                             <a class="nav-link text-primary" aria-current="page" href="/<%= menuPage.$path %>">
                                 <%= menuPage.title %>
                             </a>
                         </li>
-                    <% } %>
+                        <% } %>
 
                 </ul>
             </div>
         </div>
     </nav>
-

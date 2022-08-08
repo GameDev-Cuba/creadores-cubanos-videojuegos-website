@@ -2,15 +2,9 @@
 
     <%- include("_page") %>
 
-    <div class="d-flex justify-content-center mb-4">
-        <% for(const tag of $page.tags) { %>
-            <a class="ms-2 text-uppercase" href="/tags/creadores/<%= tag %>">
-                #<%= tag %>
-            </a>
-        <% } %>
-    </div>
-
         <div class="container">
+
+            <%- include("_tags", {tagsPage: "creadores"}) %>
 
             <div class="row">
 

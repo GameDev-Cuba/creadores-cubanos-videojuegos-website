@@ -1,0 +1,7 @@
+<div class="d-flex flex-wrap justify-content-center mb-4">
+    <% for(const tag of $page.tags) { %>
+        <a class="ms-2 text-uppercase" href="/tags/<%= tagsPage %>/<%= tag %>">
+            #<%= tag %>
+        </a>
+    <% } %>
+</div>

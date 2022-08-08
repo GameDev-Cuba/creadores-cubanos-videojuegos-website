@@ -1,9 +1,9 @@
 ---
 title: Yoslan Rodríguez
-description: Director de la revista Juega Fast
+description: Creador y Director de la Revista Juega Fast
 image: assets/yoslan-rodriguez.jpg
 tags:
     - comunicador
 ---
 
-Director de la revista Juega Fast
+Creador y Director de la Revista Juega Fast.

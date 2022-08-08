@@ -21,3 +21,7 @@ Key features:
 - Excellent controls and responses.
 - Variety of weapons.
 - Cooperative and battles against other players in local network.
+
+[Trailer](https://youtu.be/t5RElhJNYts)
+
+[More](https://www.sires-studio.com/video-games/reincarnated-souls)

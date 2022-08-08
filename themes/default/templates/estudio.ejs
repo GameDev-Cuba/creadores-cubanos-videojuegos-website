@@ -2,73 +2,86 @@
 
     <div class="container mt-5">
         
-        <div class="studio-main-card card border-0 bg-transparent">
-            
-            <img src="/<%= $page.$path %>/<%= $page.image %>" class="img-fluid">
+        <div class="row">
 
-            <div class="card-body">
-                <h1 class="card-title text-primary">
+            <div class="col-lg-6 col-md-12">
+
+                <img src="/<%= $page.$path %>/<%= $page.image %>" class="img-fluid">
+
+                <h1 class="card-title text-primary mt-2">
                     <%= $page.title %>
                 </h1>
-            </div>
-            <div class="card-body fs-5">
 
-                <div class="row row-cols-sm-1 row-cols-md-2">
-                    <div class="col mb-4 page-content">
-                        <%- $page.$content %>
+                <%- $page.$content %>
 
-                        <h3 class="mt-5">Productos de <%= $page.title %></h3>
+                <!-- equipo -->
 
-                        <% 
-                            const productos = ($page.products || []).map(name => site.__productos["__" + name]);
-                        %>
-
-                        <div class="list-group">
-                        
-                            <% for (const producto of productos) { %>
-                                <div class="list-group-item d-flex justify-content-left border-0 bg-transparent">
-                                    <img src="/<%= producto.$path %>/<%= producto.image %>"
-                                    style="width:8em;height: 8em;">
-                                    <div class="ps-4 pt-3">
-                                        <h4><%= producto.title %></h4>
-                                        <p class="text-muted fs-6"><%= producto.description %></p>
-                                        <a class="btn btn-info" href="/<%= producto.$path %>">Muéstrame más &RightArrow;</a>
-                                    </div>
-                                </div>
-                            
-                            <% } %>
-
-                        </div> <!-- list group -->
-
-                    </div>
-                    <div class="col">
-
-                        <h3 class="">Equipo de <%= $page.title %></h3>
+                <h4 class="text-primary mt-4">Equipo de <%= $page.title %></h4>
+                        <hr class="text-primary">
 
                         <% 
                             const team = ($page.team || []).map(name => site.__creadores["__" + name]);
                         %>
-                        
-                        <div class="list-group">
-                        
-                            <% for (const dev of team) { %>
-                                    <div class="list-group-item d-flex justify-content-left border-0 bg-transparent">
-                                        <img src="/<%= dev.$path %>/<%= dev.image %>" class="rounded-circle"
-                                        style="width:5em;height: 5em;">
-                                        <div class="ps-4 pt-3">
-                                            <a href="/<%= dev.$path %>">
-                                                <%= dev.title %>
-                                            </a>
-                                            <p class="text-muted fs-6"><%= dev.description %></p>
+
+                        <% if (team.length === 0) { %>
+
+                            <p>Desconocido.</p>
+
+                        <% } else { %>
+                            
+                            <div class="list-group mb-4">
+                            
+                                <% for (const dev of team) { %>
+                                        <div class="list-group-item d-flex justify-content-left border-0 bg-transparent">
+                                            <img src="/<%= dev.$path %>/<%= dev.image %>" class="rounded-circle"
+                                            style="width:5em;height: 5em;">
+                                            <div class="ps-4 pt-3">
+                                                <a href="/<%= dev.$path %>">
+                                                    <%= dev.title %>
+                                                </a>
+                                                <p class="text-muted fs-6"><%= dev.description %></p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                            <% } %>
+                                <% } %>
 
-                        </div> <!-- list group -->
+                            </div>
+                        <% } %>
 
-                    </div>
-                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+
+                <h4 class="text-primary">Productos de <%= $page.title %></h4>
+                <hr class="text-primary">
+
+                    <% 
+                        const productos = ($page.products || []).map(name => site.__productos["__" + name]);
+                    %>
+
+                    <% if (productos.length === 0) { %>
+
+                        <p>Desconocido.</p>
+
+                    <% } %>
+                    
+
+                    <div class="list-group">
+                    
+                        <% for (const producto of productos) { %>
+                            <div class="list-group-item d-flex justify-content-left border-0 bg-transparent">
+                                <img src="/<%= producto.$path %>/<%= producto.image %>"
+                                style="width:8em;height: 8em;">
+                                <div class="ps-4 pt-3">
+                                    <h4><%= producto.title %></h4>
+                                    <p class="text-muted fs-6"><%= producto.description %></p>
+                                    <a class="btn btn-info" href="/<%= producto.$path %>">Muéstrame más &RightArrow;</a>
+                                </div>
+                            </div>
+                        
+                        <% } %>
+
+                    </div> <!-- list group -->
             </div>
         </div>
 

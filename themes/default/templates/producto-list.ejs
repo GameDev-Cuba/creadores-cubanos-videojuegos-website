@@ -4,13 +4,7 @@
 
         <div class="container">
 
-            <div class="d-flex justify-content-center mb-4">
-                <% for(const tag of $page.tags) { %>
-                    <a class="ms-2 text-uppercase" href="/tags/productos/<%= tag %>">
-                        #<%= tag %>
-                    </a>
-                <% } %>
-            </div>
+            <%- include("_tags", {tagsPage: "productos"}) %>
 
             <div class="card-group">
 
