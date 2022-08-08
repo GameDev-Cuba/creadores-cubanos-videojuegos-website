@@ -6,6 +6,7 @@ products:
     - the-solar-moose-ebe
     - the-solar-moose-la_vida_de_andrea
     - the-solar-moose-romb_tider
+	- the-solar-moose-gunnect
 tags:
     - programador
     - lider
