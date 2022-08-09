@@ -4,7 +4,6 @@ description: Programador Desarrollador de Videojuegos y Aplicaciones
 image: assets/pic.jpg
 products:
     - alanpro-fuerzas-de-la-naturaleza
-    - alanpro-shira
     - alanpro-pollos-fuera
     - alanpro-pa-que-el-virus-se-muera
 tags:
