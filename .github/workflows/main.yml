@@ -28,3 +28,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
+    - uses: actions/upload-pages-artifact@v1.0.2
+      with:
+        input.path: "www/"
+    - uses: actions/deploy-pages@v1.0.7
+
