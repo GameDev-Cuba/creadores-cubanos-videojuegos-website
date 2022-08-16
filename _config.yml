@@ -1,3 +1,0 @@
-# Jekyll config, to be copied to the www/ folder.
-include:
-  - _static
