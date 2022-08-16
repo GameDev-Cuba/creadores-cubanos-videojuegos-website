@@ -50,16 +50,20 @@ jobs:
         id: pages
         uses: actions/configure-pages@v1
 
-      - name: Build StaticoJS ${{ matrix.node-version }}
+      - name: Setup node ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build
+      
+      - name: Install node modules
+        run: npm ci
+
+      - name: Build staticojs
+        run: npm run build
 
       - name: Upload artifact
-      - uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v1
         with:
           path: ./www
 
