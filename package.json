@@ -6,7 +6,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "node index.js",
+		"build": "node index.js && cp _config.yml www",
 		"server": "http-server www -p 8000 -c-1",
 		"watch": "nodemon index.js --watch themes --watch content --watch index.js  -e js,ejs,png,jpg,md,css"
 	},
