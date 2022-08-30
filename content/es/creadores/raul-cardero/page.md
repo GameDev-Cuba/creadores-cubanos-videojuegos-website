@@ -3,7 +3,7 @@ title: Raúl Cardero
 description: Desarrollador de videojuegos - Fundador - Diseñador
 image: assets/raul-cardero-avatar.jpg
 products:
-    - cnoaraul-chaguito-restaurandosantiago
+    - cnoaraul-chaguito-restaurando-santiago
 tags:
     - programador
     - artista

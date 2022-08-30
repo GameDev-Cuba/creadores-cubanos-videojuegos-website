@@ -5,7 +5,7 @@ image: assets/cnoaraul-games.webp
 team:
     - raul-cardero
 products:
-    - cnoaraul-chaguito-restaurandosantiago
+    - cnoaraul-chaguito-restaurando-santiago
 ---
 CNOARAUL GAMES o CNOARAUL es un pequeño estudio que desarrolla videojuegos. Actualmente conformado por una sola persona que libera todo su pasión, creatividad y talento por el fantástico mundo de los videojuegos. Creando así, obras interactivas que puedan ser disfrutadas por todos.
 🎮❤⭐⚙☕
