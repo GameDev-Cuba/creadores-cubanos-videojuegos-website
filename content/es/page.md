@@ -24,6 +24,7 @@ social_accounts:
       url: https://www.facebook.com/Asociación-Cubana-de-Videojuegos-100340248122912
     - name: GitHub @GameDev-Cuba
       url: https://github.com/GameDev-Cuba/creadores-cubanos-videojuegos-website/
+contact_email: equipo@videojuegoscuba.org
 contribute_message: ¡Quiero ser parte!
 featured_messages:
     - title: Nosotros
