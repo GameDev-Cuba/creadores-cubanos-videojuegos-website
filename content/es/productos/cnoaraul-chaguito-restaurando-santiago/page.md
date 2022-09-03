@@ -7,4 +7,5 @@ tags: ["juego"]
 Chaguito Restaurando Santiago es un videojuego 2D para móviles basado en “Chaguito”, la mascota de la provincia de Santiago de Cuba. Personaje creado por el diseñador Isauro Salas Alfonzo. En el juego hay que restaurar zonas de la vida real como parques y avenidas que están siendo ensuciadas por un ser misterioso. Esto mientras se juegan minijuegos, se resuelven puzzles y se buscan coleccionables. El juego cuenta con múltiples easter egg y referencias a otros videojuegos. Este juego ha sido desarrollado totalmente por una sola persona y cuenta con una versión beta distribuida en Apklis e Itch.io.
 
 [Chaguito Restaurando Santiago en Itch.io](https://cnoaraul.itch.io/chaguito-restaurando-santiago)
+
 [Chaguito Restaurando Santiago en Apklis](https://www.apklis.cu/application/com.cnoaraul.chaguitorestaurandosantiago_beta)
