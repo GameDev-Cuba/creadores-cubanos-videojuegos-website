@@ -1,6 +1,6 @@
 ---
 title: Raúl Cardero
-description: Desarrollador de videojuegos - Fundador - Diseñador
+description: Desarrollador - Fundador - Diseñador - Programador
 image: assets/raul-cardero-avatar.jpg
 products:
     - cnoaraul-chaguito-restaurando-santiago
@@ -9,8 +9,8 @@ tags:
     - artista
     - lider
 ---
-Soy un desarrollador y artista de videojuegos independiente. Fundador de la marca personal CNOARAUL. Los videojuegos son mi forma de expresarme.
+Soy un desarrollador y artista de videojuegos independiente y fundador de CNOARAUL GAMES. Los videojuegos son mi forma de expresarme.
 🎮❤⭐⚙☕
 
-**Redes sociales**
+**Redes sociales:**
 * [Twitter @cnoaraul](https://twitter.com/cnoaraul)
