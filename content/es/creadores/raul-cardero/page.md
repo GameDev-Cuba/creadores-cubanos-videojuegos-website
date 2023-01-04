@@ -9,7 +9,7 @@ tags:
     - artista
     - lider
 ---
-Soy un desarrollador y artista de videojuegos independiente. Fundador de CNOARAUL. Artista diseñador, programador, animador y compositor autodidacta. Los videojuegos son mi forma de expresarme.
+Soy un desarrollador y artista de videojuegos independiente. Fundador de la marca personal CNOARAUL. Los videojuegos son mi forma de expresarme.
 🎮❤⭐⚙☕
 
 **Redes sociales**
