@@ -6,6 +6,7 @@ featured_tags:
     - artista
     - lider
     - comunicador
+    - músico
     - otro
 ---
 
