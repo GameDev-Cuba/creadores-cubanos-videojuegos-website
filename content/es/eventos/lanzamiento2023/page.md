@@ -1,8 +1,8 @@
 ---
 title: Lanzamiento de videojuegos cubanos 2023.
 description: Evento para presentar los videojuegos cubanos al público nacional.
-banner_image: assets/lanzamiento2023-banner.jpeg
-image: assets/lanzamiento2023-banner.jpeg
+banner_image: assets/lanzamiento2023-banner-2.jpeg
+image: assets/lanzamiento2023-banner-2.jpeg
 fecha: 4 de abril 2023
 ---
 
