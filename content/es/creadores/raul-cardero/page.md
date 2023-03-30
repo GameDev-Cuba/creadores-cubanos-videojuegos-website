@@ -4,6 +4,7 @@ description: Desarrollador - Fundador - Diseñador - Programador
 image: assets/raul-cardero-avatar.jpg
 products:
     - cnoaraul-chaguito-restaurando-santiago
+    - cnoaraul-shubbo
 tags:
     - programador
     - artista
