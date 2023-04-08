@@ -6,6 +6,7 @@ team:
     - arian-fornaris
 products:
     - matandile-pedrito-cambolo
+    - matandile-gorila-vs-yeti
 ---
 
 En Matandile Games nos enfocamos en hacer pequeños videojuegos que sean divertidos y además vinculen algún tema de la enseñanza primaria.
