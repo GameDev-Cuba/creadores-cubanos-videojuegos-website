@@ -8,8 +8,11 @@ tags:
     - programador
 ---
 
-Autor de [Phaser Editor 2D](https://phasereditor2d.com), un IDE para crear juegos HTML5. 
+Autor de [Phaser Editor 2D](https://phasereditor2d.com), un IDE para crear juegos HTML5, y fundador de [Matandile Games](../../estudios/matandile/).
+
 He creado algunos juegos para los Global Game Jam realizados en Cuba. Además, he formado parte de otros equipos y colaborado con la programación de juegos para terceros clientes.
+
+En el año 2022 creé Matandile Games, un pequeño estudio de videojuegos con el objetivo de crear productos destinados a la infancia y la familia.
 
 La programación de Phaser Editor 2D consume casi todo mi tiempo, pero siempre estoy abierto a colaborar en otros proyectos.
 
