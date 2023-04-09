@@ -1,6 +1,6 @@
 ---
 title: ¿Conoce estos diez nuevos videojuegos cubanos?
-date: 5-4-2023
+date: 5-3-2023
 description: Recientemente se presentaron una decena de títulos desarrollados en la Mayor de las Antillas por empresas, estudios o creadores independientes, un esfuerzo más por consolidar una industria en torno a esta actividad en el país.
 image: assets/foto.jpg
 ---
