@@ -13,7 +13,7 @@ tags:
 
 Soy graduado de Medicina pero Prgramador de Corazón
 
-Amante los games. Me gusta diseñar en blender y tambien
+Amante a los games. Me gusta diseñar en blender y tambien
 los graficos pixelart en asesprite. Intentando siempre 
 superarme
  
@@ -25,7 +25,7 @@ superarme
 
 
 
-mis datos
+
 
 
 
