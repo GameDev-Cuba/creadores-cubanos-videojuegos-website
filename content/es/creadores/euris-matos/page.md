@@ -1,7 +1,7 @@
 ---
 title: Euris Matos (Dullahan)
 description: intento de programador, artista 3d y pixelart
-image: assets/mi-foto-perfil.jpg
+image: assets/IMG_20230409_082146.jpg
 products:
     
     
