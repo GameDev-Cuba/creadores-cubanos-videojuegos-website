@@ -3,7 +3,7 @@ title: Creadores Cubanos de Videojuegos
 description: Comunidad cubana de creadores de videojuegos. Noticias, eventos, estudios, creadores... encuéntralo todo aquí.
 logo_image: assets/logo.png
 short_title: CCV
-banner_image: assets/banner.jpg
+banner_image: assets/banner-2.jpeg
 favicon: assets/logo.png
 call_to_action:
     label: Conoce nuestros estudios de videojuegos

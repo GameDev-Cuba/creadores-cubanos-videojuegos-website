@@ -1,5 +1,7 @@
 .main-header-img {
     background-position: center;
+    background-color: rgb(160, 160, 255);
+    background-blend-mode: multiply;
 }
 
 .home-noticias-group .card {
