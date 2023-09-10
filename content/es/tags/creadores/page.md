@@ -7,6 +7,7 @@ featured_tags:
     - lider
     - comunicador
     - músico
+    - investigador
     - otro
 ---
 
