@@ -1,7 +1,7 @@
 ---
 title: Pedrito Cambolo
 description: Un gran corredor (y matemático) de la prehistoria.
-image: assets/pedrito-cambolo-1.jpeg
+image: assets/icon.jpg
 tags: ["juego"]
 ---
 

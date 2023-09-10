@@ -1,7 +1,7 @@
 ---
 title: Arian Fornaris
 description: Desarrollador de videojuegos y autor de Phaser Editor 2D
-image: assets/profile.jpg
+image: assets/arian-fornaris.jpeg
 products:
     - arian-phaser-editor-2d
 tags:
