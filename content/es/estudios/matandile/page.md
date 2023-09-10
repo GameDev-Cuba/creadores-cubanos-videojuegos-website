@@ -1,7 +1,7 @@
 ---
 title: Matandile Games
 description: Videojuegos para la familia
-image: assets/matandile.jpeg
+image: assets/matandile-09092023.jpeg
 team:
     - arian-fornaris
 products:
@@ -9,9 +9,11 @@ products:
     - matandile-gorila-vs-yeti
 ---
 
-En Matandile Games nos enfocamos en hacer pequeños videojuegos que sean divertidos y además vinculen algún tema de la enseñanza primaria.
-
-Nuestro objetivo no es crear juegos adictivos, sino que tanto los mayores como los menores de la casa puedan interactuar a través de nuestros productos y pasar un momento gratificante.
+Matandile Games es un proyecto familiar. En el proceso de creación participamos todos en casa. Nuestro objetivo es pasar un buen tiempo juntos, y crear videojuegos entretenidos y de utilidad para las familias. Aspiramos que nuestros juegos sean una alternativa más para que adultos y niños pasen un momento divertido y aprendan.
 
 [Conoce más sobre Matandile Games en nuestra web](https://matandile.videojuegoscuba.org/)
+
+[Nuestro canal de YouTube](https://www.youtube.com/@MatandileGames)
+
+[Nuestro grupo de Facebook](http://facebook.com/groups/videojuegosfamiliacuba)
 

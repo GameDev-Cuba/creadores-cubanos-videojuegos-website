@@ -1,7 +1,7 @@
 ---
 title: Gorila vs Yeti
 description: Una disputa territorial con piedras, plátanos y las tablas de multiplicar.
-image: assets/icon.jpeg
+image: assets/icon-09092023.jpg
 tags: ["juego"]
 ---
 
